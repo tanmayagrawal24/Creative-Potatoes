@@ -7,11 +7,10 @@
 
   <a class="cp-skip-link" href="#inhalt">Zum Inhalt springen</a>
 
-  {% include "partials/header.njk" %}
-
-  <main class="cp-main" id="inhalt">
-    {{ content | safe }}
-  </main>
+  {# Kopfbereich und <main> werden in index.njk gesetzt: hero.njk ist
+     der <header> der Seite und muss AUSSERHALB von <main> stehen,
+     damit der Sprunglink den Kopfbereich überspringt. #}
+  {{ content | safe }}
 
   {% include "partials/footer.njk" %}
 

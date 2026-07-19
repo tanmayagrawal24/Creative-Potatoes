@@ -1,10 +1,167 @@
 /* =========================================================
-   BASE — NOCH NICHT BEFÜLLT
+   BASE
+   Reset, selbst gehostete Schriften, Container, Fokus,
+   Bewegungsreduktion.
 
-   Hier entstehen: Reset, fluide Typografie auf Basis der
-   Token-Skala, Container, Fokus-Zustände, prefers-reduced-motion.
+   Lädt NACH tokens.css und VOR sections.css / signature.css.
 
-   Wartet auf die verbindliche Token-Liste (siehe tokens.css).
-   Jeder Wert hier wird ein var(--cp-…) sein — keine direkt
-   eingetragenen Farben, Schriften oder Abstände.
+   Grenze zum Design-Team: hier werden bewusst keine
+   background-, color-, font-family-, font-size- oder
+   line-height-Regeln auf section, header oder andere generische
+   Selektoren gesetzt. Sonst kaskadieren sie in die .sig-*
+   Abschnitte hinein und überschreiben deren Gestaltung.
+   Alles davon steht ausschließlich auf .cp-* Klassen oder body.
    ========================================================= */
+
+/* ---------- Schriften, selbst gehostet ----------
+   Kein Google-Fonts-Aufruf: der überträgt Besucher-IPs in die USA
+   und ist für eine Seite mit DACH-Kundschaft nicht tragbar.
+   Dateien stammen aus @fontsource-variable (siehe package.json),
+   kopiert nach src/assets/fonts/.
+
+   Familiennamen bewusst "Fraunces" / "Schibsted Grotesk", damit sie
+   zu --cp-font-display / --cp-font-body aus tokens.css passen.
+   Fontsource selbst nennt sie "… Variable" — das würde nicht greifen.
+
+   Zwei Subsets je Familie: latin deckt die deutschen Umlaute
+   (ä ö ü) und das ß ab, latin-ext ergänzt weitere europäische
+   Zeichen. Der Browser lädt nur, was die Seite tatsächlich braucht. */
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/assets/fonts/fraunces-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/assets/fonts/fraunces-latin-ext-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 900;
+  src: url("/assets/fonts/schibsted-grotesk-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 900;
+  src: url("/assets/fonts/schibsted-grotesk-latin-ext-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-block-size: 100vh;
+  background: var(--cp-bg);
+  color: var(--cp-ink);
+  font-family: var(--cp-font-body);
+  font-size: var(--cp-step-0);
+  line-height: 1.6;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg,
+picture {
+  max-inline-size: 100%;
+  block-size: auto;
+  display: block;
+}
+
+/* ---------- Container ----------
+   Muss exakt .sig-shell aus signature.css entsprechen, sonst
+   stehen die Kanten der Abschnitte nicht auf einer Linie. */
+
+.cp-container {
+  max-inline-size: var(--cp-maxw);
+  margin-inline: auto;
+  padding-inline: var(--cp-space-4);
+}
+
+@media (min-width: 48em) {
+  .cp-container {
+    padding-inline: var(--cp-space-5);
+  }
+}
+
+/* ---------- Sprunglink ---------- */
+
+.cp-skip-link {
+  position: absolute;
+  inset-inline-start: var(--cp-space-3);
+  inset-block-start: calc(var(--cp-space-3) * -6);
+  z-index: 10;
+  padding: var(--cp-space-2) var(--cp-space-3);
+  background: var(--cp-surface-2);
+  color: var(--cp-ink);
+  font-size: var(--cp-step--1);
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid var(--cp-line);
+  border-radius: var(--cp-radius);
+  transition: inset-block-start var(--cp-dur) var(--cp-ease);
+}
+
+.cp-skip-link:focus-visible {
+  inset-block-start: var(--cp-space-3);
+}
+
+/* ---------- Fokus ----------
+   Nur auf .cp-*: die .sig-* Abschnitte bringen ihre eigenen
+   Fokuszustände mit. */
+
+.cp-body :is(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--cp-accent);
+  outline-offset: var(--cp-space-1);
+  border-radius: var(--cp-radius);
+}
+
+/* ---------- Bewegungsreduktion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

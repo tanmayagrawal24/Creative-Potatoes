@@ -7,14 +7,6 @@
       <p class="cp-footer__origin">{{ site.originStatement }}</p>
     </div>
 
-    <nav class="cp-footer__nav" aria-label="Fußzeilennavigation">
-      <ul class="cp-footer__list">
-        {%- for link in site.nav %}
-        <li><a class="cp-footer__link" href="{{ link.href }}">{{ link.label }}</a></li>
-        {%- endfor %}
-      </ul>
-    </nav>
-
     <div class="cp-footer__contact">
       <a class="cp-footer__email" href="mailto:{{ site.email }}">{{ site.email }}</a>
     </div>

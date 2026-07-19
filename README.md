@@ -76,10 +76,13 @@ Alle Inhalte liegen im Ordner `src/_data/` als `.json`-Dateien.
 
 | Datei | Inhalt |
 | --- | --- |
-| `site.json` | Name, Claim, Herkunftssatz, die drei Belegpunkte, E-Mail-Adresse, Navigation |
-| `services.json` | Die drei Leistungsgruppen mit ihren Einzelleistungen |
-| `approach.json` | Die drei Schritte Verstehen / Aufbauen / Skalieren |
+| `site.json` | Name, Claim, Herkunftssatz, die drei Belegpunkte, E-Mail-Adresse |
+| `services.json` | Die Leistungsgruppen mit ihren Einzelleistungen |
+| `approach.json` | Überschrift und die Schritte Verstehen / Aufbauen / Skalieren |
 | `references.json` | Die Referenzen |
+
+Die Navigation besteht bewusst nur aus dem Logo und einem Kontakt-Link im
+Kopfbereich. Es gibt keine Navigationsliste zum Pflegen.
 
 ### Die wichtigsten zwei Sätze
 
@@ -135,15 +138,19 @@ nur Kleinbuchstaben und Bindestriche enthalten — sie wird zum Sprungziel:
 {
   "id": "beratung",
   "title": "Beratung",
-  "intro": "Ein Satz zur Einordnung der Gruppe.",
+  "headline": "Ein Satz zur Einordnung der Gruppe.",
+  "note": "Optionaler Hinweis. Diese Zeile darf ganz fehlen.",
   "items": [
     { "name": "Workshops", "description": "Beschreibung der Leistung." }
   ]
 }
 ```
 
-Die Seite übernimmt neue Gruppen und Leistungen automatisch — Layout und
-Gestaltung müssen nicht angefasst werden.
+`"note"` ist freiwillig: fehlt die Zeile, wird nichts angezeigt.
+
+Die Gruppen dürfen unterschiedlich lang sein — vier, sieben und drei Einträge
+nebeneinander sind kein Problem. Die Seite übernimmt neue Gruppen und
+Leistungen automatisch; Layout und Gestaltung müssen nicht angefasst werden.
 
 ---
 
@@ -205,9 +212,19 @@ Zeile pro Abschnitt:
 - **Abschnitt entfernen:** die entsprechende Zeile löschen.
 - **Reihenfolge ändern:** die Zeilen verschieben.
 
-Wird ein Abschnitt entfernt, der in der Navigation verlinkt ist, sollte der
-passende Eintrag unter `"nav"` in `src/_data/site.json` ebenfalls gelöscht
-werden — sonst führt der Menüpunkt ins Leere.
+Zwei Zeilen dürfen dabei nicht verschwinden: `hero.njk` ist der Kopfbereich der
+Seite (Logo und Kontakt-Link), und `kontakt.njk` ist das Ziel dieses Links.
+Wird eine davon gelöscht, fehlt der Seite ihr Kopf beziehungsweise der
+Kontakt-Link führt ins Leere.
+
+## Schriften
+
+Die Schriften Fraunces und Schibsted Grotesk liegen als Dateien im Projekt
+(`src/assets/fonts/`) und werden vom eigenen Server ausgeliefert — **nicht**
+von Google Fonts. Das ist Absicht: Google Fonts überträgt die IP-Adresse jeder
+Besucherin und jedes Besuchers in die USA, was deutsche Gerichte als
+DSGVO-Verstoß gewertet haben. Es ist also nichts einzurichten, und es darf
+kein Google-Fonts-Link ergänzt werden.
 
 ---
 

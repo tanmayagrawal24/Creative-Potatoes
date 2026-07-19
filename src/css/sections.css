@@ -1,9 +1,366 @@
 /* =========================================================
-   SECTIONS — NOCH NICHT BEFÜLLT
+   SECTIONS
+   Gestaltung der Abschnitte Positionierung, Leistungen, Ansatz,
+   Referenzen, Kontakt sowie der Fußzeile.
 
-   Gestaltung der Abschnitte Positionierung, Leistungen,
-   Ansatz, Referenzen, Kontakt sowie Header, Footer und
-   Logo-Slot. Alle Klassen mit cp- Präfix.
-
-   Wartet auf die verbindliche Token-Liste (siehe tokens.css).
+   Lädt NACH base.css und VOR signature.css.
+   Alle Selektoren tragen das cp- Präfix. Keine Regel greift auf
+   ein generisches Element zu, damit nichts in die .sig-*
+   Abschnitte des Design-Teams kaskadiert.
    ========================================================= */
+
+/* ---------- Gemeinsames Abschnittsgerüst ---------- */
+
+.cp-section {
+  padding-block: var(--cp-section-y);
+  border-top: 1px solid var(--cp-line);
+}
+
+.cp-kicker {
+  margin: 0 0 var(--cp-space-4);
+  font-size: var(--cp-step--1);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cp-ink-muted);
+}
+
+.cp-h2 {
+  margin: 0 0 var(--cp-space-6);
+  max-inline-size: 24ch;
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-4);
+  font-weight: 360;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* ---------- Positionierung ---------- */
+
+.cp-proofpoints {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--cp-space-5);
+  align-items: start;
+}
+
+@media (min-width: 48em) {
+  .cp-proofpoints {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--cp-space-6);
+  }
+}
+
+.cp-proofpoint {
+  padding-block-start: var(--cp-space-4);
+  border-top: 1px solid var(--cp-line);
+}
+
+.cp-proofpoint__label {
+  margin: 0 0 var(--cp-space-3);
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-1);
+  font-weight: 420;
+  line-height: 1.2;
+}
+
+.cp-proofpoint__description {
+  margin: 0;
+  max-inline-size: 42ch;
+  color: var(--cp-ink-muted);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+/* ---------- Leistungen ----------
+   Die Gruppen sind unterschiedlich lang (4 / 7 / 3 Einträge).
+   align-items: start verhindert, dass kurze Spalten auf die Höhe
+   der längsten gestreckt werden; jede Gruppe endet, wo ihr Inhalt
+   endet. Die Spaltenzahl ist nicht an die Zahl der Gruppen
+   gebunden — kommt eine vierte hinzu, rutscht sie in die nächste
+   Zeile. */
+
+.cp-leistungen__groups {
+  display: grid;
+  gap: var(--cp-space-7);
+  align-items: start;
+}
+
+@media (min-width: 60em) {
+  .cp-leistungen__groups {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: var(--cp-space-6);
+  }
+}
+
+.cp-leistung__title {
+  margin: 0 0 var(--cp-space-3);
+  padding-block-end: var(--cp-space-3);
+  border-bottom: 1px solid var(--cp-line);
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-2);
+  font-weight: 420;
+  line-height: 1.15;
+}
+
+.cp-leistung__headline {
+  margin: 0 0 var(--cp-space-4);
+  color: var(--cp-ink-muted);
+  font-size: var(--cp-step-1);
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.cp-leistung__note {
+  margin: 0 0 var(--cp-space-4);
+  padding: var(--cp-space-3);
+  background: var(--cp-surface);
+  border-inline-start: 2px solid var(--cp-accent);
+  border-radius: var(--cp-radius);
+  color: var(--cp-ink-muted);
+  font-size: var(--cp-step--1);
+  line-height: 1.55;
+}
+
+.cp-leistung__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--cp-space-4);
+}
+
+.cp-leistung__name {
+  margin: 0 0 var(--cp-space-1);
+  font-size: var(--cp-step-0);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.cp-leistung__description {
+  margin: 0;
+  color: var(--cp-ink-muted);
+  font-size: var(--cp-step--1);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+/* ---------- Ansatz ---------- */
+
+.cp-ansatz__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--cp-space-6);
+  align-items: start;
+}
+
+@media (min-width: 48em) {
+  .cp-ansatz__steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.cp-ansatz__step {
+  padding-block-start: var(--cp-space-4);
+  border-top: 1px solid var(--cp-line);
+}
+
+.cp-ansatz__number {
+  display: block;
+  margin-block-end: var(--cp-space-3);
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-3);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--cp-ink-faint);
+}
+
+.cp-ansatz__title {
+  margin: 0 0 var(--cp-space-3);
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-2);
+  font-weight: 420;
+  line-height: 1.15;
+}
+
+.cp-ansatz__description {
+  margin: 0;
+  max-inline-size: 46ch;
+  color: var(--cp-ink-muted);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+/* ---------- Referenzen ---------- */
+
+.cp-referenzen__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--cp-space-5);
+  align-items: start;
+}
+
+@media (min-width: 60em) {
+  .cp-referenzen__list {
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  }
+}
+
+.cp-referenz {
+  padding: var(--cp-space-4);
+  background: var(--cp-surface);
+  border: 1px solid var(--cp-line);
+  border-radius: var(--cp-radius);
+}
+
+.cp-referenz__client {
+  margin: 0 0 var(--cp-space-1);
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-1);
+  font-weight: 420;
+  line-height: 1.2;
+}
+
+.cp-referenz__link {
+  color: var(--cp-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--cp-accent);
+  text-underline-offset: 0.25em;
+  transition: color calc(var(--cp-dur) / 2) var(--cp-ease);
+}
+
+.cp-referenz__link:hover {
+  color: var(--cp-accent);
+}
+
+/* --cp-ink-faint bleibt den grossen Ziffern vorbehalten (siehe
+   .sig-stage-num). Auf Fliesstext dieser Groesse reicht sein
+   Kontrast nicht fuer WCAG AA — deshalb hier --cp-ink-muted. */
+.cp-referenz__sector {
+  margin: 0 0 var(--cp-space-3);
+  font-size: var(--cp-step--1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cp-ink-muted);
+}
+
+.cp-referenz__summary {
+  margin: 0 0 var(--cp-space-3);
+  color: var(--cp-ink-muted);
+  font-size: var(--cp-step--1);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.cp-referenz__result {
+  margin: 0;
+  padding-block-start: var(--cp-space-3);
+  border-top: 1px solid var(--cp-line);
+  color: var(--cp-ink);
+  font-size: var(--cp-step--1);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ---------- Kontakt ---------- */
+
+.cp-kontakt__text {
+  margin: 0 0 var(--cp-space-5);
+  max-inline-size: 46ch;
+  color: var(--cp-ink-muted);
+  font-size: var(--cp-step-1);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.cp-kontakt__email {
+  display: inline-block;
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-2);
+  font-weight: 420;
+  color: var(--cp-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--cp-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+  transition:
+    color calc(var(--cp-dur) / 2) var(--cp-ease),
+    text-underline-offset calc(var(--cp-dur) / 2) var(--cp-ease);
+}
+
+.cp-kontakt__email:hover {
+  color: var(--cp-accent);
+  text-underline-offset: 0.45em;
+}
+
+/* ---------- Fußzeile ---------- */
+
+.cp-footer {
+  padding-block-start: var(--cp-section-y);
+  border-top: 1px solid var(--cp-line);
+}
+
+.cp-footer__inner {
+  display: grid;
+  gap: var(--cp-space-5);
+  align-items: start;
+}
+
+@media (min-width: 48em) {
+  .cp-footer__inner {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: var(--cp-space-6);
+  }
+
+  .cp-footer__contact {
+    justify-self: end;
+    text-align: right;
+  }
+}
+
+.cp-footer__tagline {
+  margin: var(--cp-space-4) 0 0;
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-1);
+  font-weight: 420;
+  line-height: 1.3;
+}
+
+.cp-footer__origin {
+  margin: var(--cp-space-2) 0 0;
+  color: var(--cp-ink-muted);
+  font-size: var(--cp-step--1);
+  line-height: 1.5;
+}
+
+.cp-footer__email {
+  color: var(--cp-ink);
+  font-size: var(--cp-step-0);
+  text-decoration: underline;
+  text-decoration-color: var(--cp-accent);
+  text-underline-offset: 0.3em;
+  transition: color calc(var(--cp-dur) / 2) var(--cp-ease);
+}
+
+.cp-footer__email:hover {
+  color: var(--cp-accent);
+}
+
+.cp-footer__legal {
+  margin-block-start: var(--cp-space-6);
+  padding-block: var(--cp-space-4);
+  border-top: 1px solid var(--cp-line);
+}
+
+.cp-footer__legal p {
+  margin: 0;
+  color: var(--cp-ink-muted);
+  font-size: var(--cp-step--1);
+}

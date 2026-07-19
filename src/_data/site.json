@@ -24,13 +24,5 @@
       "label": "Ausrichtung auf DACH — DE / AT / CH",
       "description": "Sprache, Marktlogik und regulatorischer Rahmen des deutschsprachigen Raums sind der Ausgangspunkt, nicht die Übersetzung."
     }
-  ],
-
-  "nav": [
-    { "label": "Positionierung", "href": "#positionierung" },
-    { "label": "Leistungen", "href": "#leistungen" },
-    { "label": "Ansatz", "href": "#ansatz" },
-    { "label": "Referenzen", "href": "#referenzen" },
-    { "label": "Kontakt", "href": "#kontakt" }
   ]
 }

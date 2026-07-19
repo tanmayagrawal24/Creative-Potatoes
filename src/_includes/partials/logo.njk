@@ -1,26 +1,17 @@
 {# ---------------------------------------------------------------
    LOGO-SLOT
 
-   !!! PROVISORISCH !!!
-   Die verbindliche Markup-Vorgabe aus dem Design-Vertrag lag beim
-   Erstellen dieser Datei noch nicht vor. Diese Fassung reserviert
-   bereits die korrekten Maße (160x40 Desktop / 120x30 Mobil) und
-   rendert den Fallback-Schriftzug sauber, muss aber durch das
-   exakte vorgegebene Markup ersetzt werden.
+   Exakt dasselbe Markup wie im Kopfbereich (hero.njk, betreut vom
+   Design-Team). Beide Stellen müssen identisch bleiben — die
+   Klassennamen .cp-logo und .cp-logo-fallback werden in
+   signature.css gestaltet.
 
-   Sobald src/assets/logo.svg existiert, wird das Bild angezeigt und
-   der Schriftzug automatisch ausgeblendet. Siehe README, Abschnitt
-   "Logo einsetzen".
+   Platz ist fest reserviert: 160x40 Desktop, 120x30 Mobil.
+   Fehlt src/assets/logo.svg, ersetzt der onerror-Handler das Bild
+   durch den Schriftzug. Siehe README, "Logo einsetzen".
    --------------------------------------------------------------- #}
 
-<a class="cp-logo" href="/" aria-label="{{ site.name }} — Startseite">
-  <img
-    class="cp-logo__image"
-    src="/assets/logo.svg"
-    alt="{{ site.name }}"
-    width="160"
-    height="40"
-    decoding="async"
-    onerror="this.closest('.cp-logo').classList.add('cp-logo--fallback'); this.remove();">
-  <span class="cp-logo__wordmark" aria-hidden="true">{{ site.name }}</span>
+<a class="cp-logo" href="/" aria-label="{{ site.name }}">
+  <img src="/assets/logo.svg" alt="{{ site.name }}" width="160" height="40"
+       onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'cp-logo-fallback',textContent:'Creative Potatoes'}))">
 </a>

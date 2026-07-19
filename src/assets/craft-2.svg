@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <path id="o" d="M700 698V440c0-35 30-50 62-68 10-6 14-14 14-24v-46h48v46c0 10 4 18 14 24 32 18 62 33 62 68v258q0 8-8 8H708q-8 0-8-8Z"/>
+  </defs>
+  <rect width="1600" height="900" fill="#1B1713"/>
+  <g stroke="#6C6459" stroke-opacity=".28" stroke-width="1.5" fill="none">
+    <path d="M60 880h1480M230 796h1140M360 730h880M460 680h680M530 644h540"/>
+    <path d="M200 900 660 604M450 900 726 604M700 900 778 604M900 900 822 604M1150 900 874 604M1400 900 940 604"/>
+  </g>
+  <path d="M380 600h840" stroke="#6C6459" stroke-opacity=".4" stroke-width="1.5" fill="none"/>
+  <g stroke="#6C6459" stroke-width="2" stroke-opacity=".6" fill="none">
+    <path d="M60 96V60h36M1504 60h36v36M60 804v36h36M1504 840h36v-36"/>
+  </g>
+  <use href="#o" transform="translate(-460 0)" fill="none" stroke="#6C6459" stroke-width="2" opacity=".15"/>
+  <use href="#o" transform="translate(-250 0)" fill="none" stroke="#6C6459" stroke-width="2" opacity=".3"/>
+  <path d="M330 626q230-118 448-56" stroke="#C89B5A" stroke-width="3" fill="none" stroke-dasharray="10 10"/>
+  <path d="M764 558l18 10-19 9" stroke="#C89B5A" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M330 616l10 10-10 10-10-10ZM556 552l10 10-10 10-10-10Z" stroke="#C89B5A" stroke-width="2" fill="none"/>
+  <path d="M800 240V732" stroke="#6C6459" stroke-width="1.5" stroke-dasharray="6 6" fill="none"/>
+  <rect x="688" y="250" width="224" height="460" fill="none" stroke="#6C6459" stroke-width="1.5" stroke-dasharray="8 8"/>
+  <g fill="none" stroke="#6C6459" stroke-width="1.5">
+    <ellipse cx="800" cy="690" rx="98" ry="16"/>
+    <ellipse cx="800" cy="600" rx="100" ry="16"/>
+    <ellipse cx="800" cy="442" rx="98" ry="16"/>
+    <ellipse cx="800" cy="408" rx="86" ry="14"/>
+    <ellipse cx="800" cy="372" rx="52" ry="10"/>
+    <ellipse cx="800" cy="280" rx="30" ry="8"/>
+  </g>
+  <g fill="none" stroke="#A69D8F" stroke-width="2">
+    <ellipse cx="800" cy="505" rx="100" ry="16"/>
+    <ellipse cx="800" cy="325" rx="26" ry="7"/>
+  </g>
+  <use href="#o" fill="none" stroke="#A69D8F" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="770" y="258" width="60" height="44" rx="6" fill="none" stroke="#A69D8F" stroke-width="2.5"/>
+  <path d="M700 440V398M900 440V398" stroke="#A69D8F" stroke-width="1.5" fill="none"/>
+  <circle cx="700" cy="398" r="3" fill="#A69D8F"/>
+  <circle cx="900" cy="398" r="3" fill="#A69D8F"/>
+  <g fill="#1B1713" stroke="#EDE7DD" stroke-width="1.5">
+    <rect x="683" y="245" width="10" height="10"/><rect x="907" y="245" width="10" height="10"/>
+    <rect x="683" y="705" width="10" height="10"/><rect x="907" y="705" width="10" height="10"/>
+    <rect x="795" y="245" width="10" height="10"/><rect x="795" y="705" width="10" height="10"/>
+    <rect x="683" y="475" width="10" height="10"/><rect x="907" y="475" width="10" height="10"/>
+  </g>
+  <g fill="#1B1713" stroke="#EDE7DD" stroke-width="2">
+    <circle cx="700" cy="690" r="5"/><circle cx="700" cy="440" r="5"/>
+    <circle cx="762" cy="372" r="5"/><circle cx="776" cy="302" r="5"/>
+    <circle cx="824" cy="302" r="5"/><circle cx="838" cy="372" r="5"/>
+    <circle cx="900" cy="440" r="5"/><circle cx="900" cy="690" r="5"/>
+  </g>
+  <g fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M800 700V632M793 644l7-14 7 14" stroke="#EDE7DD" stroke-width="3"/>
+    <path d="M800 700l82 22M868 712l16 10-18 6" stroke="#A69D8F" stroke-width="3"/>
+    <path d="M800 700l-70 36M744 726l-16 11 18 5" stroke="#6C6459" stroke-width="3"/>
+  </g>
+  <circle cx="800" cy="700" r="6" fill="#1B1713" stroke="#EDE7DD" stroke-width="2"/>
+</svg>

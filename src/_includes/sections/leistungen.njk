@@ -1,16 +1,24 @@
-{# Inhalte: src/_data/services.json — Gruppen und Leistungen nur dort pflegen #}
+{# Inhalte: src/_data/services.json — Gruppen und Leistungen nur dort pflegen.
+   Die Zahl der Gruppen und die Zahl der Einträge je Gruppe sind frei:
+   das Raster richtet sich nach dem Inhalt, nicht umgekehrt. #}
 
 <section class="cp-section cp-leistungen" id="leistungen" aria-labelledby="leistungen-titel">
   <div class="cp-container">
 
-    <h2 class="cp-section__label" id="leistungen-titel">Leistungen</h2>
+    <p class="cp-kicker">Leistungen</p>
+    <h2 class="cp-h2" id="leistungen-titel">Drei Felder, ein Team.</h2>
 
     <div class="cp-leistungen__groups">
       {%- for group in services %}
       <article class="cp-leistung" id="{{ group.id }}">
         <h3 class="cp-leistung__title">{{ group.title }}</h3>
-        {%- if group.intro %}
-        <p class="cp-leistung__intro">{{ group.intro }}</p>
+
+        {%- if group.headline %}
+        <p class="cp-leistung__headline">{{ group.headline }}</p>
+        {%- endif %}
+
+        {%- if group.note %}
+        <p class="cp-leistung__note">{{ group.note }}</p>
         {%- endif %}
 
         <ul class="cp-leistung__items" role="list">

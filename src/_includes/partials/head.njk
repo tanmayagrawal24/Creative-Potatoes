@@ -8,7 +8,7 @@
 {%- set pageTitle = title or site.name -%}
 {%- set pageDescription = description or site.description -%}
 {%- set canonical = page.url | absoluteUrl(site.url) -%}
-{%- set ogImage = "/assets/og-image.jpg" | absoluteUrl(site.url) -%}
+{%- set ogImage = "/assets/og-image.png" | absoluteUrl(site.url) -%}
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,6 +24,9 @@
 <meta property="og:description" content="{{ pageDescription }}">
 <meta property="og:url" content="{{ canonical }}">
 <meta property="og:image" content="{{ ogImage }}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ pageTitle }}">
@@ -31,7 +34,16 @@
 <meta name="twitter:image" content="{{ ogImage }}">
 
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#14110E">
 
+{# Die Display-Schrift trägt die <h1> und wird deshalb vorgeladen.
+   Selbst gehostet — keine Anfrage an Dritte, siehe README. #}
+<link rel="preload" href="/assets/fonts/fraunces-latin-wght-normal.woff2"
+      as="font" type="font/woff2" crossorigin>
+
+{# Reihenfolge ist tragend: tokens -> base -> sections -> signature. #}
 <link rel="stylesheet" href="/css/tokens.css">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/sections.css">

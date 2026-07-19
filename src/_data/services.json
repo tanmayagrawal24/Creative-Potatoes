@@ -2,7 +2,7 @@
   {
     "id": "social-performance",
     "title": "Social & Performance",
-    "intro": "Reichweite, die messbar auf Umsatz einzahlt.",
+    "headline": "Reichweite, die messbar auf Umsatz einzahlt.",
     "items": [
       {
         "name": "Paid Social",
@@ -25,7 +25,8 @@
   {
     "id": "content-infrastruktur",
     "title": "Content & Infrastruktur",
-    "intro": "Die Substanz und die Systeme dahinter.",
+    "headline": "Die Substanz und die Systeme dahinter.",
+    "note": "Produktion und Technik greifen ineinander — Inhalte entstehen bereits im Format, in dem sie ausgespielt werden.",
     "items": [
       {
         "name": "Content Produktion",
@@ -42,13 +43,25 @@
       {
         "name": "Tracking & Analytics",
         "description": "Serverseitiges Tracking, Consent-Management und Reports, die Entscheidungen tragen."
+      },
+      {
+        "name": "Motion & 3D",
+        "description": "Bewegtbild vom Storyboard bis zum finalen Render — für Produkt, Marke und Kampagne."
+      },
+      {
+        "name": "Fotografie",
+        "description": "Produkt-, Still- und Kampagnenfotografie, abgestimmt auf die Bildsprache der Marke."
+      },
+      {
+        "name": "Lokalisierung DACH",
+        "description": "Anpassung von Texten, Motiven und Tonalität an die Märkte in Deutschland, Österreich und der Schweiz."
       }
     ]
   },
   {
     "id": "retention-crm",
     "title": "Retention & CRM",
-    "intro": "Aus Erstkäufen werden Bestandskunden.",
+    "headline": "Aus Erstkäufen werden Bestandskunden.",
     "items": [
       {
         "name": "E-Mail-Marketing",
@@ -61,10 +74,6 @@
       {
         "name": "CRM-Aufbau",
         "description": "Datenmodell, Systemauswahl und Einführung — sauber aufgesetzt statt nachträglich repariert."
-      },
-      {
-        "name": "Loyalty & Lifecycle",
-        "description": "Programme und Kommunikation, die den Kundenwert über die Zeit erhöhen."
       }
     ]
   }

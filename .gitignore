@@ -20,3 +20,6 @@ yarn-error.log*
 # Local environment
 .env
 .env.local
+
+# Claude Code local settings (machine-specific)
+.claude/settings.local.json

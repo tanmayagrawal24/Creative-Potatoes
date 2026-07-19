@@ -7,16 +7,22 @@ description: "Kreativ- und Marketingagentur für den DACH-Raum. Social & Perform
 {# ---------------------------------------------------------------
    SEITENAUFBAU
 
-   Jede Zeile unten ist ein Abschnitt der Startseite, in der
+   Jede include-Zeile unten ist ein Abschnitt der Startseite, in der
    Reihenfolge, in der er erscheint. Um einen Abschnitt zu
    entfernen, genügt es, seine Zeile zu löschen. Um die Reihenfolge
    zu ändern, werden die Zeilen verschoben.
+
+   hero.njk steht bewusst vor <main>: es ist der Kopfbereich der
+   Seite, kein Inhaltsabschnitt.
    --------------------------------------------------------------- #}
 
-{% include "sections/hero.njk" %}           {# Auftakt — betreut vom Design-Team #}
-{% include "sections/positionierung.njk" %} {# Herkunft und drei Belegpunkte #}
-{% include "sections/leistungen.njk" %}     {# Drei Leistungsgruppen aus services.json #}
-{% include "sections/craft.njk" %}          {# Handwerk — betreut vom Design-Team #}
-{% include "sections/ansatz.njk" %}         {# Verstehen / Aufbauen / Skalieren #}
-{% include "sections/referenzen.njk" %}     {# Ausgewählte Arbeiten aus references.json #}
-{% include "sections/kontakt.njk" %}        {# Kontaktaufnahme per E-Mail #}
+{% include "sections/hero.njk" %}             {# Kopfbereich — betreut vom Design-Team #}
+
+<main class="cp-main" id="inhalt">
+{% include "sections/positionierung.njk" %}   {# Herkunft und drei Belegpunkte #}
+{% include "sections/leistungen.njk" %}       {# Leistungsgruppen aus services.json #}
+{% include "sections/craft.njk" %}            {# Handwerk — betreut vom Design-Team #}
+{% include "sections/ansatz.njk" %}           {# Verstehen / Aufbauen / Skalieren #}
+{% include "sections/referenzen.njk" %}       {# Ausgewählte Arbeiten aus references.json #}
+{% include "sections/kontakt.njk" %}          {# Kontaktaufnahme per E-Mail #}
+</main>
