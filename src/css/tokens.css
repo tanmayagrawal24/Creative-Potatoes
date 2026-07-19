@@ -1,17 +1,46 @@
-/* =========================================================
-   TOKENS — PLATZHALTER, NOCH NICHT BEFÜLLT
-
-   Diese Datei wird vollständig vom Design-Team ersetzt.
-
-   Die verbindliche Token-Liste lag beim Erstellen des Gerüsts
-   noch nicht vor. Sobald sie da ist, stehen hier die
-   --cp-… Custom Properties (Farben, Typografie, Abstände).
-
-   Bis dahin bleibt die Datei absichtlich leer: erfundene
-   Token-Namen würden sich mit der echten Liste überschneiden
-   und wären später schwer wieder herauszufinden.
-   ========================================================= */
+/* tokens.css — Creative Potatoes design tokens
+   OWNED BY DESIGN AGENT. Overwrites the scaffold placeholder wholesale.
+   NOTE: font loading lives in the <link> tags in the page head, NOT here.
+   Do not re-add an @import — it is render-blocking and breaks if reordered. */
 
 :root {
-  color-scheme: dark;
+  /* Colour */
+  --cp-bg: #14110E;
+  --cp-surface: #1B1713;
+  --cp-surface-2: #241F19;
+  --cp-ink: #EDE7DD;
+  --cp-ink-muted: #A69D8F;
+  --cp-ink-faint: #6C6459;
+  --cp-accent: #C89B5A;
+  --cp-accent-soft: rgba(200, 155, 90, 0.16);
+  --cp-line: rgba(237, 231, 221, 0.14);
+
+  /* Type */
+  --cp-font-display: "Fraunces", Georgia, serif;
+  --cp-font-body: "Schibsted Grotesk", system-ui, -apple-system, sans-serif;
+  --cp-step--1: clamp(0.8125rem, 0.79rem + 0.12vw, 0.9rem);
+  --cp-step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --cp-step-1: clamp(1.2rem, 1.13rem + 0.33vw, 1.4rem);
+  --cp-step-2: clamp(1.45rem, 1.32rem + 0.65vw, 1.85rem);
+  --cp-step-3: clamp(1.75rem, 1.5rem + 1.25vw, 2.5rem);
+  --cp-step-4: clamp(2.1rem, 1.68rem + 2.1vw, 3.4rem);
+  --cp-step-5: clamp(2.75rem, 1.97rem + 3.9vw, 5.1rem);
+
+  /* Space */
+  --cp-space-1: 0.25rem;
+  --cp-space-2: 0.5rem;
+  --cp-space-3: 1rem;
+  --cp-space-4: 1.5rem;
+  --cp-space-5: 2.5rem;
+  --cp-space-6: 4rem;
+  --cp-space-7: 6.5rem;
+  --cp-space-8: 10rem;
+
+  /* Surface & motion */
+  --cp-radius: 2px;
+  --cp-shadow: 0 30px 60px -35px rgba(0, 0, 0, 0.75);
+  --cp-maxw: 70rem;
+  --cp-section-y: clamp(5rem, 3.5rem + 7vw, 9.5rem);
+  --cp-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --cp-dur: 640ms;
 }

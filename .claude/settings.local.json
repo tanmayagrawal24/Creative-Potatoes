@@ -16,7 +16,9 @@
       "Bash(printf '\\\\n# Node.js \\(installiert nach ~/.local/node\\)\\\\nexport PATH=\"$HOME/.local/node/bin:$PATH\"\\\\n')",
       "Bash(zsh -l -c 'node --version && npm --version')",
       "Bash(git init *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'baseline: clean Eleventy build, Lighthouse 100/100/96/91, no CSS *)",
+      "Bash(git commit -q -m 'design agent: tokens, signature.css, hero + craft sections *)"
     ]
   }
 }

@@ -1,1 +1,29 @@
-<!-- OWNED BY DESIGN AGENT -->
+{# hero.njk — Startbereich Creative Potatoes
+   OWNED BY DESIGN AGENT.
+   Dies ist der <header> der Seite. Die Shell darf KEINEN weiteren Header rendern. #}
+<header class="sig-hero">
+  <div class="sig-shell">
+    <nav class="sig-topbar" aria-label="Hauptnavigation">
+      <a class="cp-logo" href="/" aria-label="Creative Potatoes">
+        <img src="/assets/logo.svg" alt="Creative Potatoes" width="160" height="40"
+             onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'cp-logo-fallback',textContent:'Creative Potatoes'}))">
+      </a>
+      <a class="sig-topbar-link" href="#kontakt">Kontakt</a>
+    </nav>
+
+    <div class="sig-hero-stage">
+      <p class="sig-kicker">Kreativ- &amp; Marketingagentur · DACH</p>
+
+      <h1 class="sig-h1">{{ site.tagline | replace(".", "") }}<span class="sig-dot">.</span></h1>
+
+      <p class="sig-claim">
+        <span class="sig-claim-half">Indische Kreativkraft.</span>
+        <span class="sig-claim-half">Deutsches Marktverständnis.</span>
+      </p>
+
+      <p class="sig-lede">Wir entwickeln Kampagnen, Content und Motion für inhabergeführte D2C- und Mittelstandsmarken — leise im Auftritt, genau im Handwerk, spürbar im Ergebnis.</p>
+
+      <a class="sig-cta" href="#craft">Wie wir arbeiten</a>
+    </div>
+  </div>
+</header>

@@ -1,1 +1,440 @@
-/* OWNED BY DESIGN AGENT */
+/* signature.css — Hero + „Vom Storyboard zum Screen"
+   OWNED BY DESIGN AGENT. Load AFTER tokens.css and base.css.
+   Alle Klassen sig-präfixiert. Ausnahme lt. Absprache: .cp-logo / .cp-logo-fallback. */
+
+/* ---------- Shell ---------- */
+
+.sig-shell {
+  max-inline-size: var(--cp-maxw);
+  margin-inline: auto;
+  padding-inline: var(--cp-space-4);
+}
+
+@media (min-width: 48em) {
+  .sig-shell {
+    padding-inline: var(--cp-space-5);
+  }
+}
+
+.sig-hero,
+.sig-craft {
+  background: var(--cp-bg);
+  color: var(--cp-ink);
+  font-family: var(--cp-font-body);
+  font-size: var(--cp-step-0);
+  line-height: 1.6;
+}
+
+.sig-hero ::selection,
+.sig-craft ::selection {
+  background: var(--cp-accent-soft);
+  color: var(--cp-ink);
+}
+
+.sig-hero a:focus-visible,
+.sig-craft a:focus-visible {
+  outline: 2px solid var(--cp-accent);
+  outline-offset: var(--cp-space-1);
+  border-radius: var(--cp-radius);
+}
+
+/* Der stille Punkt — Akzent nur dort, wo ein Satz endet. */
+.sig-dot {
+  color: var(--cp-accent);
+}
+
+.sig-sr-only {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- Logo (geteilt, cp-Präfix bleibt) ---------- */
+
+.cp-logo {
+  display: inline-flex;
+  align-items: center;
+  inline-size: 120px;
+  block-size: 30px;
+  color: var(--cp-ink);
+  text-decoration: none;
+}
+
+@media (min-width: 48em) {
+  .cp-logo {
+    inline-size: 160px;
+    block-size: 40px;
+  }
+}
+
+.cp-logo img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.cp-logo-fallback {
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step--1);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--cp-ink);
+}
+
+@media (min-width: 48em) {
+  .cp-logo-fallback {
+    font-size: var(--cp-step-0);
+  }
+}
+
+.cp-logo-fallback::after {
+  content: ".";
+  color: var(--cp-accent);
+}
+
+/* ---------- Hero ---------- */
+
+.sig-hero {
+  padding-block: var(--cp-space-4) var(--cp-section-y);
+}
+
+.sig-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--cp-space-3);
+  border-bottom: 1px solid var(--cp-line);
+  margin-block-end: var(--cp-space-7);
+}
+
+.sig-topbar-link {
+  font-size: var(--cp-step--1);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cp-ink-muted);
+  text-decoration: none;
+  transition: color calc(var(--cp-dur) / 2) var(--cp-ease);
+}
+
+.sig-topbar-link:hover {
+  color: var(--cp-ink);
+}
+
+.sig-hero-stage {
+  text-align: center;
+  max-inline-size: 56rem;
+  margin-inline: auto;
+}
+
+.sig-kicker {
+  font-size: var(--cp-step--1);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cp-ink-muted);
+  margin: 0 0 var(--cp-space-4);
+}
+
+.sig-h1 {
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-5);
+  font-weight: 340;
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  margin: 0;
+}
+
+/* Zweiklang: zwei Hälften, eine Achse. Mobil gestapelt um eine
+   horizontale Linie, ab Tablet gespiegelt um eine vertikale. */
+.sig-claim {
+  display: grid;
+  gap: var(--cp-space-3);
+  margin-block: var(--cp-space-6) 0;
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-2);
+  font-weight: 420;
+  line-height: 1.2;
+  color: var(--cp-ink);
+}
+
+.sig-claim-half {
+  display: block;
+}
+
+.sig-claim-half + .sig-claim-half {
+  border-top: 1px solid var(--cp-line);
+  padding-top: var(--cp-space-3);
+}
+
+@media (min-width: 48em) {
+  .sig-claim {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .sig-claim-half:first-child {
+    text-align: right;
+    padding-right: var(--cp-space-5);
+    border-right: 1px solid var(--cp-line);
+  }
+
+  .sig-claim-half + .sig-claim-half {
+    border-top: 0;
+    padding-top: 0;
+    padding-left: var(--cp-space-5);
+    text-align: left;
+  }
+}
+
+.sig-lede {
+  max-inline-size: 46ch;
+  margin: var(--cp-space-6) auto 0;
+  font-size: var(--cp-step-1);
+  line-height: 1.55;
+  color: var(--cp-ink-muted);
+  text-wrap: pretty;
+}
+
+.sig-cta {
+  display: inline-block;
+  margin-block-start: var(--cp-space-6);
+  font-size: var(--cp-step-0);
+  font-weight: 500;
+  color: var(--cp-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--cp-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35em;
+  transition:
+    color calc(var(--cp-dur) / 2) var(--cp-ease),
+    text-underline-offset calc(var(--cp-dur) / 2) var(--cp-ease);
+}
+
+.sig-cta:hover {
+  color: var(--cp-accent);
+  text-underline-offset: 0.55em;
+}
+
+/* ---------- „Vom Storyboard zum Screen" ---------- */
+
+.sig-craft {
+  padding-block: var(--cp-section-y);
+  border-top: 1px solid var(--cp-line);
+}
+
+.sig-craft-head {
+  display: grid;
+  gap: var(--cp-space-4);
+  margin-block-end: var(--cp-space-7);
+}
+
+.sig-h2 {
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-4);
+  font-weight: 360;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  margin: 0;
+}
+
+.sig-stand {
+  max-inline-size: 44ch;
+  margin: 0;
+  font-size: var(--cp-step-1);
+  line-height: 1.5;
+  color: var(--cp-ink-muted);
+  text-wrap: pretty;
+}
+
+@media (min-width: 60em) {
+  .sig-craft-head {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: end;
+    gap: var(--cp-space-6);
+  }
+
+  .sig-craft-head .sig-kicker {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+}
+
+.sig-stages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--cp-space-7);
+}
+
+.sig-stage {
+  display: grid;
+  gap: var(--cp-space-5);
+}
+
+@media (min-width: 60em) {
+  .sig-stage {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--cp-space-6);
+    align-items: start;
+  }
+}
+
+/* Panelnummern wie im Storyboard: die Reihenfolge ist die Erzählung. */
+.sig-stage-num {
+  display: block;
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-3);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--cp-ink-faint);
+  margin-block-end: var(--cp-space-4);
+}
+
+.sig-h3 {
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-2);
+  font-weight: 420;
+  line-height: 1.15;
+  margin: 0 0 var(--cp-space-3);
+}
+
+.sig-stage-copy p {
+  max-inline-size: 52ch;
+  margin: 0;
+  color: var(--cp-ink-muted);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+/* Leerer Frame als bewusster Zustand: Rahmen, Beschriftung,
+   und ein langsamer Lichtzug — Bewegung vor dem ersten Bild. */
+.sig-frame {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  background: var(--cp-surface);
+  border: 1px solid var(--cp-line);
+  border-radius: var(--cp-radius);
+  overflow: hidden;
+}
+
+.sig-frame::after {
+  content: "Render folgt — " attr(data-slot);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  font-size: var(--cp-step--1);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cp-ink-faint);
+}
+
+/* Sobald ein echtes Bild im Frame liegt, verschwindet der Platzhalter. */
+.sig-frame:has(img)::after,
+.sig-frame:has(video)::after {
+  content: none;
+}
+
+.sig-frame img,
+.sig-frame video {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Motion (nur ohne Reduced-Motion-Präferenz) ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Hero: gestaffelter Einstieg */
+  .sig-hero-stage > * {
+    opacity: 0;
+    animation: sig-rise var(--cp-dur) var(--cp-ease) forwards;
+  }
+
+  .sig-hero-stage > :nth-child(2) { animation-delay: calc(var(--cp-dur) * 0.15); }
+  .sig-hero-stage > :nth-child(3) { animation-delay: calc(var(--cp-dur) * 0.3); }
+  .sig-hero-stage > :nth-child(4) { animation-delay: calc(var(--cp-dur) * 0.45); }
+  .sig-hero-stage > :nth-child(5) { animation-delay: calc(var(--cp-dur) * 0.6); }
+
+  /* Frames: langsamer Kameraschwenk aus Licht */
+  .sig-frame::before {
+    content: "";
+    position: absolute;
+    inset: -60% -30%;
+    background: linear-gradient(
+      115deg,
+      transparent 42%,
+      var(--cp-accent-soft) 50%,
+      transparent 58%
+    );
+    animation: sig-pan calc(var(--cp-dur) * 14) var(--cp-ease) infinite alternate;
+  }
+
+  .sig-stage:nth-child(2) .sig-frame::before {
+    animation-direction: alternate-reverse;
+  }
+
+  .sig-stage:nth-child(3) .sig-frame::before {
+    animation-duration: calc(var(--cp-dur) * 20);
+  }
+
+  /* Stufen: Scroll-Reveal als Progressive Enhancement, ohne JS */
+  @supports (animation-timeline: view()) {
+    .sig-stage {
+      animation: sig-rise var(--cp-dur) var(--cp-ease) both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 45%;
+    }
+  }
+}
+
+@keyframes sig-rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--cp-space-4));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes sig-pan {
+  from { transform: translateX(-40%); }
+  to   { transform: translateX(40%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sig-hero *,
+  .sig-hero *::before,
+  .sig-hero *::after,
+  .sig-craft *,
+  .sig-craft *::before,
+  .sig-craft *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .sig-hero-stage > * {
+    opacity: 1;
+  }
+
+  .sig-frame::before {
+    display: none;
+  }
+}
