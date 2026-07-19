@@ -1,0 +1,15 @@
+<header class="cp-header">
+  <div class="cp-container cp-header__inner">
+    {% include "partials/logo.njk" %}
+
+    <nav class="cp-nav" aria-label="Hauptnavigation">
+      <ul class="cp-nav__list">
+        {%- for link in site.nav %}
+        <li class="cp-nav__item">
+          <a class="cp-nav__link" href="{{ link.href }}">{{ link.label }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

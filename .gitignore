@@ -1,0 +1,22 @@
+# Build output
+_site/
+
+# Dependencies
+node_modules/
+
+# Eleventy cache
+.cache/
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+
+# Editor / OS noise
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Local environment
+.env
+.env.local

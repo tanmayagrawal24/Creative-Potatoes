@@ -1,0 +1,17 @@
+/* =========================================================
+   TOKENS — PLATZHALTER, NOCH NICHT BEFÜLLT
+
+   Diese Datei wird vollständig vom Design-Team ersetzt.
+
+   Die verbindliche Token-Liste lag beim Erstellen des Gerüsts
+   noch nicht vor. Sobald sie da ist, stehen hier die
+   --cp-… Custom Properties (Farben, Typografie, Abstände).
+
+   Bis dahin bleibt die Datei absichtlich leer: erfundene
+   Token-Namen würden sich mit der echten Liste überschneiden
+   und wären später schwer wieder herauszufinden.
+   ========================================================= */
+
+:root {
+  color-scheme: dark;
+}

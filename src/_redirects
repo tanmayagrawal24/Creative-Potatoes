@@ -1,0 +1,11 @@
+# Cloudflare Pages — Weiterleitungen
+# Format: VON  NACH  STATUSCODE
+# 301 = dauerhaft umgezogen, 302 = vorübergehend.
+#
+# Beispiele (auskommentiert, bei Bedarf aktivieren):
+#
+# /leistungen   /#leistungen   301
+# /kontakt      /#kontakt      301
+# /impressum    /impressum/    301
+#
+# Derzeit sind keine Weiterleitungen aktiv.

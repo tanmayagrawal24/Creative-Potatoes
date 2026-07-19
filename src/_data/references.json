@@ -1,0 +1,23 @@
+[
+  {
+    "client": "Platzhalter Kunde A",
+    "sector": "E-Commerce, DE",
+    "summary": "Kurzbeschreibung des Projekts in ein bis zwei Sätzen. Was war die Ausgangslage, was wurde umgesetzt.",
+    "result": "Platzhalter-Ergebnis, z. B. +120 % Umsatz über Paid Social in neun Monaten.",
+    "url": ""
+  },
+  {
+    "client": "Platzhalter Kunde B",
+    "sector": "B2B Dienstleistung, AT",
+    "summary": "Kurzbeschreibung des Projekts in ein bis zwei Sätzen. Was war die Ausgangslage, was wurde umgesetzt.",
+    "result": "Platzhalter-Ergebnis, z. B. Kosten pro Lead um 40 % gesenkt.",
+    "url": ""
+  },
+  {
+    "client": "Platzhalter Kunde C",
+    "sector": "Retail, CH",
+    "summary": "Kurzbeschreibung des Projekts in ein bis zwei Sätzen. Was war die Ausgangslage, was wurde umgesetzt.",
+    "result": "Platzhalter-Ergebnis, z. B. Wiederkaufrate von 18 % auf 31 % erhöht.",
+    "url": ""
+  }
+]

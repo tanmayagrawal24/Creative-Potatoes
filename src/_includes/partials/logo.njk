@@ -1,0 +1,26 @@
+{# ---------------------------------------------------------------
+   LOGO-SLOT
+
+   !!! PROVISORISCH !!!
+   Die verbindliche Markup-Vorgabe aus dem Design-Vertrag lag beim
+   Erstellen dieser Datei noch nicht vor. Diese Fassung reserviert
+   bereits die korrekten Maße (160x40 Desktop / 120x30 Mobil) und
+   rendert den Fallback-Schriftzug sauber, muss aber durch das
+   exakte vorgegebene Markup ersetzt werden.
+
+   Sobald src/assets/logo.svg existiert, wird das Bild angezeigt und
+   der Schriftzug automatisch ausgeblendet. Siehe README, Abschnitt
+   "Logo einsetzen".
+   --------------------------------------------------------------- #}
+
+<a class="cp-logo" href="/" aria-label="{{ site.name }} — Startseite">
+  <img
+    class="cp-logo__image"
+    src="/assets/logo.svg"
+    alt="{{ site.name }}"
+    width="160"
+    height="40"
+    decoding="async"
+    onerror="this.closest('.cp-logo').classList.add('cp-logo--fallback'); this.remove();">
+  <span class="cp-logo__wordmark" aria-hidden="true">{{ site.name }}</span>
+</a>

@@ -1,0 +1,36 @@
+{
+  "name": "Creative Potatoes",
+  "tagline": "Marketing mit stiller Präzision.",
+  "originStatement": "Indische Kreativkraft. Deutsches Marktverständnis.",
+
+  "description": "Creative Potatoes ist eine Kreativ- und Marketingagentur für den DACH-Raum: Social & Performance, Content & Infrastruktur, Retention & CRM — aus einer Hand.",
+
+  "email": "creatives.potatoes@gmail.com",
+  "locale": "de_DE",
+  "lang": "de",
+
+  "url": "https://creative-potatoes.pages.dev",
+
+  "proofPoints": [
+    {
+      "label": "Ein Team, ein Ansprechpartner",
+      "description": "Keine Schnittstellenverluste, keine Abstimmungsketten. Eine Ansprechpartnerin oder ein Ansprechpartner über alle Disziplinen hinweg."
+    },
+    {
+      "label": "Vollständige Betreuung, 360°",
+      "description": "Von der Strategie über Content und Kampagnen bis zur Retention — der gesamte Funnel aus einer Hand."
+    },
+    {
+      "label": "Ausrichtung auf DACH — DE / AT / CH",
+      "description": "Sprache, Marktlogik und regulatorischer Rahmen des deutschsprachigen Raums sind der Ausgangspunkt, nicht die Übersetzung."
+    }
+  ],
+
+  "nav": [
+    { "label": "Positionierung", "href": "#positionierung" },
+    { "label": "Leistungen", "href": "#leistungen" },
+    { "label": "Ansatz", "href": "#ansatz" },
+    { "label": "Referenzen", "href": "#referenzen" },
+    { "label": "Kontakt", "href": "#kontakt" }
+  ]
+}

@@ -1,0 +1,19 @@
+{# Inhalte: src/_data/approach.json — Verstehen / Aufbauen / Skalieren #}
+
+<section class="cp-section cp-ansatz" id="ansatz" aria-labelledby="ansatz-titel">
+  <div class="cp-container">
+
+    <h2 class="cp-section__label" id="ansatz-titel">Ansatz</h2>
+
+    <ol class="cp-ansatz__steps" role="list">
+      {%- for stage in approach %}
+      <li class="cp-ansatz__step">
+        <span class="cp-ansatz__number" aria-hidden="true">{{ stage.step }}</span>
+        <h3 class="cp-ansatz__title">{{ stage.title }}</h3>
+        <p class="cp-ansatz__description">{{ stage.description }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+
+  </div>
+</section>

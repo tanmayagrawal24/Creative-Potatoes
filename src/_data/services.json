@@ -1,0 +1,71 @@
+[
+  {
+    "id": "social-performance",
+    "title": "Social & Performance",
+    "intro": "Reichweite, die messbar auf Umsatz einzahlt.",
+    "items": [
+      {
+        "name": "Paid Social",
+        "description": "Kampagnen auf Meta, TikTok, LinkedIn und Pinterest — von der Zielgruppenlogik bis zur laufenden Budgetsteuerung."
+      },
+      {
+        "name": "Organic Social",
+        "description": "Redaktionsplanung, Community Management und Formatentwicklung für kontinuierliche Präsenz."
+      },
+      {
+        "name": "Performance Marketing",
+        "description": "Search, Shopping und Display mit klarer Zuordnung von Ausgabe zu Ergebnis."
+      },
+      {
+        "name": "Creative Testing",
+        "description": "Strukturierte Testreihen für Motive, Hooks und Formate statt Bauchentscheidungen."
+      }
+    ]
+  },
+  {
+    "id": "content-infrastruktur",
+    "title": "Content & Infrastruktur",
+    "intro": "Die Substanz und die Systeme dahinter.",
+    "items": [
+      {
+        "name": "Content Produktion",
+        "description": "Foto, Video und Motion Design — produziert für die Plattform, auf der es ausgespielt wird."
+      },
+      {
+        "name": "Brand & Design",
+        "description": "Visuelle Identität, Design-Systeme und Vorlagen, die im Alltag tragfähig bleiben."
+      },
+      {
+        "name": "Web & Landing Pages",
+        "description": "Schnelle, zugängliche Seiten mit sauberem Tracking-Fundament."
+      },
+      {
+        "name": "Tracking & Analytics",
+        "description": "Serverseitiges Tracking, Consent-Management und Reports, die Entscheidungen tragen."
+      }
+    ]
+  },
+  {
+    "id": "retention-crm",
+    "title": "Retention & CRM",
+    "intro": "Aus Erstkäufen werden Bestandskunden.",
+    "items": [
+      {
+        "name": "E-Mail-Marketing",
+        "description": "Newsletter, Kampagnen und Segmentierung entlang des tatsächlichen Kaufverhaltens."
+      },
+      {
+        "name": "Marketing Automation",
+        "description": "Automatisierte Strecken für Willkommen, Warenkorbabbruch, Reaktivierung und Post-Purchase."
+      },
+      {
+        "name": "CRM-Aufbau",
+        "description": "Datenmodell, Systemauswahl und Einführung — sauber aufgesetzt statt nachträglich repariert."
+      },
+      {
+        "name": "Loyalty & Lifecycle",
+        "description": "Programme und Kommunikation, die den Kundenwert über die Zeit erhöhen."
+      }
+    ]
+  }
+]

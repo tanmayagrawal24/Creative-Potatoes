@@ -1,0 +1,27 @@
+# Cloudflare Pages — HTTP-Header
+# Format: Pfadmuster, danach eingerückt die Header.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+
+# Stylesheets und Bilder dürfen zwischengespeichert werden. Die
+# Dateinamen enthalten KEINE Versionskennung — deshalb bewusst kein
+# "immutable" und keine Jahresfrist: sonst sähen wiederkehrende
+# Besucher Design-Änderungen bis zu einem Jahr lang nicht.
+/css/*
+  Cache-Control: public, max-age=3600
+
+/assets/*
+  Cache-Control: public, max-age=604800
+
+# HTML immer frisch prüfen, damit Textänderungen sofort sichtbar sind.
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate

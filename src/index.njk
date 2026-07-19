@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+title: "Creative Potatoes — Marketing mit stiller Präzision."
+description: "Kreativ- und Marketingagentur für den DACH-Raum. Social & Performance, Content & Infrastruktur, Retention & CRM — aus einer Hand."
+---
+
+{# ---------------------------------------------------------------
+   SEITENAUFBAU
+
+   Jede Zeile unten ist ein Abschnitt der Startseite, in der
+   Reihenfolge, in der er erscheint. Um einen Abschnitt zu
+   entfernen, genügt es, seine Zeile zu löschen. Um die Reihenfolge
+   zu ändern, werden die Zeilen verschoben.
+   --------------------------------------------------------------- #}
+
+{% include "sections/hero.njk" %}           {# Auftakt — betreut vom Design-Team #}
+{% include "sections/positionierung.njk" %} {# Herkunft und drei Belegpunkte #}
+{% include "sections/leistungen.njk" %}     {# Drei Leistungsgruppen aus services.json #}
+{% include "sections/craft.njk" %}          {# Handwerk — betreut vom Design-Team #}
+{% include "sections/ansatz.njk" %}         {# Verstehen / Aufbauen / Skalieren #}
+{% include "sections/referenzen.njk" %}     {# Ausgewählte Arbeiten aus references.json #}
+{% include "sections/kontakt.njk" %}        {# Kontaktaufnahme per E-Mail #}

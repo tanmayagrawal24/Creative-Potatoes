@@ -1,0 +1,29 @@
+{# Inhalte: src/_data/services.json — Gruppen und Leistungen nur dort pflegen #}
+
+<section class="cp-section cp-leistungen" id="leistungen" aria-labelledby="leistungen-titel">
+  <div class="cp-container">
+
+    <h2 class="cp-section__label" id="leistungen-titel">Leistungen</h2>
+
+    <div class="cp-leistungen__groups">
+      {%- for group in services %}
+      <article class="cp-leistung" id="{{ group.id }}">
+        <h3 class="cp-leistung__title">{{ group.title }}</h3>
+        {%- if group.intro %}
+        <p class="cp-leistung__intro">{{ group.intro }}</p>
+        {%- endif %}
+
+        <ul class="cp-leistung__items" role="list">
+          {%- for item in group.items %}
+          <li class="cp-leistung__item">
+            <h4 class="cp-leistung__name">{{ item.name }}</h4>
+            <p class="cp-leistung__description">{{ item.description }}</p>
+          </li>
+          {%- endfor %}
+        </ul>
+      </article>
+      {%- endfor %}
+    </div>
+
+  </div>
+</section>
