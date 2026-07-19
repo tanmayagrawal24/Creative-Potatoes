@@ -1,0 +1,15 @@
+---
+layout: layouts/legal.njk
+permalink: /404.html
+legal: true
+eleventyExcludeFromCollections: true
+noindex: true
+title: "Seite nicht gefunden — Creative Potatoes"
+description: "Diese Adresse führt ins Leere."
+---
+
+{# permalink: /404.html liegt im Wurzelverzeichnis der Ausgabe — nur so
+   liefert Cloudflare Pages die Seite bei unbekannten Adressen automatisch aus.
+   eleventyExcludeFromCollections hält sie aus der sitemap.xml heraus. #}
+
+{% include "legal/404.njk" %}

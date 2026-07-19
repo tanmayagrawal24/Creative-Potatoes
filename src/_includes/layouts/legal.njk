@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+{% include "partials/head.njk" %}
+</head>
+<body class="cp-body">
+
+  <a class="cp-skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  {# Schmaler Kopfbereich statt hero.njk — der gehört der Startseite. #}
+  {% include "partials/legal-header.njk" %}
+
+  <main class="cp-main" id="inhalt">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+</body>
+</html>

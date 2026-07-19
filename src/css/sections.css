@@ -300,6 +300,33 @@
   text-underline-offset: 0.45em;
 }
 
+/* ---------- Kopfbereich der Unterseiten ----------
+   Gegenstück zu .sig-topbar aus signature.css, aber schmaler:
+   auf den Unterseiten trägt die Seite ihre eigene <h1>. */
+
+.cp-legalbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cp-space-4);
+  padding-block: var(--cp-space-3);
+  border-bottom: 1px solid var(--cp-line);
+}
+
+.cp-legalbar__link {
+  font-size: var(--cp-step--1);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cp-ink-muted);
+  text-decoration: none;
+  transition: color calc(var(--cp-dur) / 2) var(--cp-ease);
+}
+
+.cp-legalbar__link:hover {
+  color: var(--cp-ink);
+}
+
 /* ---------- Fußzeile ---------- */
 
 .cp-footer {
@@ -351,6 +378,38 @@
 
 .cp-footer__email:hover {
   color: var(--cp-accent);
+}
+
+.cp-footer__nav {
+  margin-block-start: var(--cp-space-4);
+}
+
+.cp-footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cp-space-4);
+}
+
+@media (min-width: 48em) {
+  .cp-footer__list {
+    justify-content: flex-end;
+  }
+}
+
+.cp-footer__link {
+  font-size: var(--cp-step--1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cp-ink-muted);
+  text-decoration: none;
+  transition: color calc(var(--cp-dur) / 2) var(--cp-ease);
+}
+
+.cp-footer__link:hover {
+  color: var(--cp-ink);
 }
 
 .cp-footer__legal {

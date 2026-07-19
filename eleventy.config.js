@@ -1,4 +1,41 @@
+import fs from "node:fs";
+import path from "node:path";
+import { schemas, validateData } from "./lib/data-schema.js";
+
+const DATA_DIR = "src/_data";
+
+/* Prüft die Inhaltsdateien, bevor Eleventy irgendetwas rendert.
+   Ein Fehler bricht den Build ab — siehe lib/data-schema.js. */
+function assertDataShape() {
+  const dataByFile = {};
+  const parseErrors = [];
+
+  for (const file of Object.keys(schemas)) {
+    const full = path.join(DATA_DIR, file);
+    try {
+      dataByFile[file] = JSON.parse(fs.readFileSync(full, "utf8"));
+    } catch (err) {
+      parseErrors.push(`${file} → ist kein gültiges JSON: ${err.message}`);
+    }
+  }
+
+  const errors = [...parseErrors, ...validateData(dataByFile)];
+
+  if (errors.length > 0) {
+    const lines = errors.map((e) => `  ✗ ${e}`).join("\n");
+    throw new Error(
+      `\n\nInhaltsdateien entsprechen nicht dem erwarteten Schema ` +
+        `(${errors.length} ${errors.length === 1 ? "Fehler" : "Fehler"}):\n\n` +
+        `${lines}\n\n` +
+        `Der Build wurde abgebrochen. Siehe lib/data-schema.js.\n`
+    );
+  }
+}
+
 export default function (eleventyConfig) {
+  // Läuft vor jedem Build und vor jedem Rebuild im Dev-Server.
+  eleventyConfig.on("eleventy.before", assertDataShape);
+
   // Stylesheets are copied through untouched — no bundler, no framework.
   eleventyConfig.addPassthroughCopy("src/css");
 

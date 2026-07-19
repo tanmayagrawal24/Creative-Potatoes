@@ -1,0 +1,12 @@
+{# Kopfbereich der Unterseiten (Datenschutz, Über, 404).
+
+   Die Startseite hat ihren eigenen Kopfbereich in hero.njk. Der hier
+   ist bewusst schmal: Logo und ein Weg zurück, sonst nichts.
+   Er enthält KEINE <h1> — die bringt jede Unterseite selbst mit. #}
+
+<header class="cp-legalbar">
+  <div class="cp-container cp-legalbar__inner">
+    {% include "partials/logo.njk" %}
+    <a class="cp-legalbar__link" href="/">Zur Startseite</a>
+  </div>
+</header>

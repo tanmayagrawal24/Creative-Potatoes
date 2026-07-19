@@ -1,0 +1,140 @@
+/* legal.css — Datenschutz, Über, 404. Eine Spalte, ruhige Typografie, keine Bewegung.
+   OWNED BY DESIGN AGENT. Load after tokens.css and base.css, on legal pages only. */
+
+.sig-legal {
+  background: var(--cp-bg);
+  color: var(--cp-ink);
+  font-family: var(--cp-font-body);
+  font-size: var(--cp-step-0);
+  line-height: 1.7;
+  padding-block: var(--cp-section-y);
+}
+
+.sig-legal-shell {
+  max-inline-size: 70ch;
+  margin-inline: auto;
+  padding-inline: var(--cp-space-4);
+}
+
+@media (min-width: 48em) {
+  .sig-legal-shell {
+    padding-inline: var(--cp-space-5);
+  }
+}
+
+.sig-legal-title {
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-3);
+  font-weight: 380;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  margin: 0 0 var(--cp-space-5);
+}
+
+.sig-legal-dot {
+  color: var(--cp-accent);
+}
+
+.sig-legal-intro {
+  font-size: var(--cp-step-1);
+  line-height: 1.55;
+  color: var(--cp-ink);
+  text-wrap: pretty;
+  margin: 0 0 var(--cp-space-6);
+}
+
+.sig-legal-h2 {
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-1);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--cp-ink);
+  margin: var(--cp-space-6) 0 var(--cp-space-3);
+}
+
+.sig-legal p {
+  margin: 0 0 var(--cp-space-4);
+  color: var(--cp-ink-muted);
+  text-wrap: pretty;
+}
+
+.sig-legal-address {
+  font-style: normal;
+  color: var(--cp-ink);
+  border-inline-start: 1px solid var(--cp-line);
+  padding-inline-start: var(--cp-space-4);
+  margin: 0 0 var(--cp-space-4);
+}
+
+.sig-legal ul {
+  margin: 0 0 var(--cp-space-4);
+  padding-inline-start: var(--cp-space-4);
+  color: var(--cp-ink-muted);
+}
+
+.sig-legal li {
+  margin-block: var(--cp-space-2);
+}
+
+.sig-legal li::marker {
+  color: var(--cp-ink-faint);
+}
+
+.sig-legal-notice {
+  border-inline-start: 2px solid var(--cp-accent);
+  background: var(--cp-surface);
+  border-radius: var(--cp-radius);
+  padding: var(--cp-space-3) var(--cp-space-4);
+  margin-block: var(--cp-space-4) var(--cp-space-5);
+}
+
+.sig-legal-notice p {
+  color: var(--cp-ink);
+  margin: 0;
+}
+
+.sig-legal-meta {
+  font-size: var(--cp-step--1);
+  color: var(--cp-ink-faint);
+  margin-block-start: var(--cp-space-6);
+}
+
+.sig-legal a {
+  color: var(--cp-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--cp-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
+.sig-legal a:hover {
+  color: var(--cp-accent);
+}
+
+.sig-legal a:focus-visible {
+  outline: 2px solid var(--cp-accent);
+  outline-offset: var(--cp-space-1);
+  border-radius: var(--cp-radius);
+}
+
+/* 404 */
+
+.sig-legal--center {
+  text-align: center;
+}
+
+.sig-legal--center .sig-legal-title {
+  font-size: var(--cp-step-4);
+}
+
+.sig-legal--center p {
+  max-inline-size: 44ch;
+  margin-inline: auto;
+}
+
+.sig-legal-back {
+  display: inline-block;
+  margin-block-start: var(--cp-space-4);
+  font-weight: 500;
+}
