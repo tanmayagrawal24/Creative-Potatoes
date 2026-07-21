@@ -1,9 +1,15 @@
 {
   "name": "Creative Potatoes",
   "tagline": "Marketing mit stiller Präzision.",
-  "originStatement": "Indische Kreativkraft. Deutsches Marktverständnis.",
+  "originStatement": "Digitale Sichtbarkeit für den Mittelstand — aus einer Hand.",
 
-  "description": "Creative Potatoes ist eine Kreativ- und Marketingagentur für den DACH-Raum: Social & Performance, Content & Infrastruktur, Retention & CRM — aus einer Hand.",
+  "heroSubline": "SEO, KI-Sichtbarkeit (GEO), Social Media, Newsletter und Produktfilme. Ein Ansprechpartner. Klare Monatsplanung. Messbare Ergebnisse.",
+  "ctaPrimary": "Kostenloses Erstgespräch vereinbaren",
+  "ctaSecondary": "Leistungen ansehen",
+
+  "trustLine": "[[Referenz-Trustline — vom Inhaber auszufüllen]]",
+
+  "description": "Freelancer für digitale Sichtbarkeit: SEO, GEO/KI-Suche, Social Media, Newsletter & Produktfilme für KMU und Mittelstand. Transparent geplant, monatlich nachvollziehbar.",
 
   "email": "creatives.potatoes@gmail.com",
   "locale": "de_DE",
