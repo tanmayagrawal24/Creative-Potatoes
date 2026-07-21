@@ -1,1 +1,62 @@
-[{"id":"social-performance","title":"Social & Performance","headline":"Reichweite, die verkauft — nicht nur gefällt.","items":[{"name":"Instagram & Social Content","description":"Redaktionsplanung, Reels, visuelle Identität."},{"name":"LinkedIn & B2B","description":"Positionierung, Thought Leadership, Leads."},{"name":"Paid Social","description":"Kampagnen mit klarer Performance-Logik."},{"name":"Motion Ads für Instagram","description":"Animierte Reels-Ads und kurze Produktfilme, optimiert für Feed und Story."}]},{"id":"content-infrastruktur","title":"Content & Infrastruktur","headline":"Das Fundament, auf dem Sichtbarkeit wächst.","note":"Einmal aufgebaut. Dauerhaft auffindbar.","items":[{"name":"SEO","description":"Technisch, inhaltlich, lokal für DACH."},{"name":"GEO","description":"Sichtbarkeit in KI-Suchantworten — ChatGPT, Perplexity, Google AI Overviews."},{"name":"Content-Produktion","description":"Foto und Video, markenkonsistent für Web und Social."},{"name":"Blog & redaktioneller Content","description":"SEO-getriebene Artikel, die Traffic und Autorität aufbauen."},{"name":"Katalog- & Produktdaten","description":"Strukturierte, verkaufsfertige Kataloge für Shop, Marktplätze und Vertrieb."},{"name":"E-Mail-Marketing","description":"Kampagnen, Automationen und Flows entlang der Customer Journey."},{"name":"Meta & Google Ads","description":"Performance-Kampagnen mit klarer Logik — Reichweite, die messbar verkauft."}]},{"id":"retention-crm","title":"Retention & CRM","headline":"Nach dem Kauf beginnt die Beziehung.","note":"Wir halten Kundinnen und Kunden im Dialog — mit Betreuung, gezielter Ansprache und kontinuierlichem Feedback.","items":[{"name":"Community Management","description":"Dialog, Betreuung, Reaktionszeit."},{"name":"Newsletter","description":"Retention-fokussierte Newsletter-Vorbereitung, einmal pro Quartal."},{"name":"Kundenumfrage nach Kauf","description":"Monatliche Umfrage-E-Mail nach Verkaufsabschluss — für Zufriedenheit und Feedback."}]}]
+[
+  {
+    "id": "seo",
+    "title": "SEO für Onlineshops & Unternehmensseiten",
+    "teaser": "Bessere Google-Rankings durch Inhalte, die verkaufen — und Technik, die trägt.",
+    "bullets": [
+      "Keyword-Mapping und Priorisierung: welche Begriffe sich wirklich für Ihr Geschäft lohnen",
+      "SEO-Texte für Kategorie-, Produkt- und Landingpages (600–1.000 Wörter, suchintentionsgerecht)",
+      "Einbau inklusive: Überschriftenstruktur, Meta-Daten, interne Verlinkung, UX-Check",
+      "Nachoptimierung bestehender Seiten, die nicht ranken — inklusive Umzug auf eigene Landingpages",
+      "Indexmanagement und Behebung von Keyword-Kannibalisierung",
+      "Branchen-Landingpages für Ihre wichtigsten Zielgruppen"
+    ]
+  },
+  {
+    "id": "geo",
+    "title": "GEO — Sichtbarkeit in KI-Suchen",
+    "badge": "Kernkompetenz",
+    "teaser": "Wenn Kunden die KI fragen, soll die Antwort aus Ihren Inhalten kommen.",
+    "bullets": [
+      "KI-Sichtbarkeits-Check: wird Ihr Unternehmen von KI-Systemen zitiert — und wenn nicht, warum?",
+      "SEO-/GEO-Fachbeiträge: fachlich fundierte Artikel, strukturiert für Google-Rankings und KI-Zitierbarkeit",
+      "Überarbeitung bestehender Fachbeiträge für die Extraktion durch KI-Systeme (Frage-Antwort-Struktur)",
+      "Autorenprofil und E-E-A-T: glaubwürdige Autorenseiten, damit Ihre Inhalte als Quelle gelten",
+      "Strukturierte Daten (schema.org) für Artikel und Produkte",
+      "Themen-Gap-Analysen: welche Fragen Ihre Zielgruppe stellt, inklusive Suchvolumen — als Content-Pipeline"
+    ]
+  },
+  {
+    "id": "social",
+    "title": "Social Media & Google Business",
+    "teaser": "Ihre Produkte dort sichtbar, wo Ihre Kunden täglich sind.",
+    "bullets": [
+      "Produkt-Content für LinkedIn und Instagram: Planung, Text, Visuals",
+      "Content-Repurposing: aus einem Fachbeitrag wird ein Monat Social-Media-Content",
+      "Google Unternehmensprofil: Einrichtung, Pflege, regelmäßige Beiträge",
+      "Einheitlicher Auftritt über alle Kanäle"
+    ]
+  },
+  {
+    "id": "newsletter",
+    "title": "Newsletter-Marketing (Brevo)",
+    "teaser": "Direkter Draht zu Ihrer Zielgruppe — DSGVO-konform über Brevo.",
+    "bullets": [
+      "Einrichtung und Template-Design in Brevo",
+      "Monatliche Kampagnen-Erstellung — Sie geben frei und versenden an Ihre Zielgruppe",
+      "Verwertung Ihrer Fachbeiträge und Produktneuheiten als Newsletter-Inhalte",
+      "Einfache Automationen, zum Beispiel eine Willkommensstrecke"
+    ]
+  },
+  {
+    "id": "3d",
+    "title": "3D-Animation & Produktfilm",
+    "teaser": "Als 3D-Animator und Filmemacher zeige ich Ihre Produkte, wie Fotos es nicht können.",
+    "bullets": [
+      "3D-Produktanimationen für Website, Social Media und Messen",
+      "Erklärvideos für technische Produkte und Prozesse",
+      "Kurze Produktfilme für Social-Media-Kampagnen",
+      "Direkt verzahnt mit Ihrem Content-Plan — kein separates Studio nötig"
+    ]
+  }
+]

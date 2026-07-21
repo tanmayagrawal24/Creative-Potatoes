@@ -1,0 +1,26 @@
+{
+  "headline": "So arbeiten wir zusammen.",
+  "note": "Dieselbe Systematik, mit der spezialisierte deutsche SEO-Agenturen arbeiten — als Freelancer, ohne Agentur-Overhead.",
+  "steps": [
+    {
+      "number": "01",
+      "title": "Monatsplanung",
+      "description": "Sie erhalten zu Monatsbeginn einen konkreten Maßnahmenplan mit Stunden pro Aufgabe."
+    },
+    {
+      "number": "02",
+      "title": "Freigabe",
+      "description": "Kein Task startet ohne Ihre Zustimmung. Volle Kontrolle über Budget und Prioritäten."
+    },
+    {
+      "number": "03",
+      "title": "Umsetzung & Tracking",
+      "description": "Jede Maßnahme wird dokumentiert: URL, Keyword, Status, Datum."
+    },
+    {
+      "number": "04",
+      "title": "Reporting",
+      "description": "Zum Monatsende: Soll-/Ist-Stunden, Ergebnisse und Empfehlungen für den Folgemonat."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "note": "Preise auf Anfrage. Monatspakete sind monatlich kündbar.",
+  "items": [
+    {
+      "id": "audit",
+      "title": "Sichtbarkeits-Audit",
+      "kind": "Einmaliges Projekt",
+      "contents": "Keyword-Mapping, Technik-Quickcheck, Wettbewerbs-Gap-Analyse, KI-Sichtbarkeits-Check, priorisierte 6-Monats-Roadmap",
+      "result": "Klarer Fahrplan",
+      "cta": "Audit anfragen"
+    },
+    {
+      "id": "wachstum",
+      "title": "Wachstum",
+      "kind": "Monatliches Paket (ca. 10 Std.)",
+      "contents": "Strategie und Abstimmung (2 Std.), 1–2 SEO-Texte inklusive Einbau, 1 technische Maßnahme wie interne Verlinkung",
+      "result": "Kontinuierlicher SEO-Fortschritt",
+      "cta": "Erstgespräch buchen"
+    },
+    {
+      "id": "komplett",
+      "title": "Sichtbarkeit Komplett",
+      "kind": "Monatliches Paket (ca. 20 Std.)",
+      "contents": "Alles aus Wachstum, zusätzlich 1 GEO-Fachbeitrag inklusive strukturierter Daten, 8 Social-Media-Posts, 1 Newsletter",
+      "result": "Volle Sichtbarkeit über alle Kanäle",
+      "cta": "Erstgespräch buchen"
+    }
+  ],
+  "addons": [
+    "3D-Animation und Produktfilm",
+    "Zusätzlicher Fachbeitrag",
+    "Branchen-Landingpage",
+    "Google-Unternehmensprofil-Setup",
+    "PAA- und Themen-Gap-Analyse"
+  ]
+}
