@@ -104,22 +104,14 @@
         "@type": "OfferCatalog",
         "name": "Leistungen",
         "itemListElement": [
-          {%- for group in services %}
+          {%- for pillar in services %}
           {
-            "@type": "OfferCatalog",
-            "name": {{ group.title | dump | safe }},
-            "itemListElement": [
-              {%- for item in group.items %}
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": {{ item.name | dump | safe }},
-                  "description": {{ item.description | dump | safe }}
-                }
-              }{% if not loop.last %},{% endif %}
-              {%- endfor %}
-            ]
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": {{ pillar.title | dump | safe }},
+              "description": {{ pillar.teaser | dump | safe }}
+            }
           }{% if not loop.last %},{% endif %}
           {%- endfor %}
         ]
@@ -133,6 +125,24 @@
       "inLanguage": "de-DE",
       "publisher": { "@id": "{{ site.url }}/#organization" }
     }
+    {%- if page.url == "/" %},
+    {
+      "@type": "FAQPage",
+      "@id": "{{ site.url }}/#faq",
+      "mainEntity": [
+        {%- for entry in faq %}
+        {
+          "@type": "Question",
+          "name": {{ entry.q | dump | safe }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ entry.a | dump | safe }}
+          }
+        }{% if not loop.last %},{% endif %}
+        {%- endfor %}
+      ]
+    }
+    {%- endif %}
   ]
 }
 </script>
