@@ -1,0 +1,25 @@
+{# Inhalte: src/_data/faq.json — Liste aus {q, a}.
+   Akkordeon aus nativen <details>/<summary>: kein JavaScript, damit
+   die strenge CSP (script-src 'self') greift und die Tastaturbedienung
+   vom Browser kommt. Dieselben Daten speisen das FAQPage-JSON-LD im
+   <head> — Inhalt steht also nur an einer Stelle. #}
+
+<section class="cp-section cp-faq" id="faq" aria-labelledby="faq-titel">
+  <div class="cp-container">
+
+    <p class="cp-kicker">FAQ</p>
+    <h2 class="cp-h2" id="faq-titel">Häufige Fragen.</h2>
+
+    <div class="cp-faq__list">
+      {%- for entry in faq %}
+      <details class="cp-faq__item">
+        <summary class="cp-faq__q">{{ entry.q }}</summary>
+        <div class="cp-faq__a">
+          <p>{{ entry.a }}</p>
+        </div>
+      </details>
+      {%- endfor %}
+    </div>
+
+  </div>
+</section>

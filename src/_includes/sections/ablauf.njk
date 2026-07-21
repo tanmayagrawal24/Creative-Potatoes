@@ -1,0 +1,24 @@
+{# Inhalte: src/_data/process.json — ein Objekt mit headline, note (optional)
+   und steps[] (number, title, description). #}
+
+<section class="cp-section cp-ablauf" id="ablauf" aria-labelledby="ablauf-titel">
+  <div class="cp-container">
+
+    <p class="cp-kicker">Ablauf</p>
+    <h2 class="cp-h2" id="ablauf-titel">{{ process.headline }}</h2>
+    {%- if process.note %}
+    <p class="cp-ablauf__note">{{ process.note }}</p>
+    {%- endif %}
+
+    <ol class="cp-ablauf__steps" role="list">
+      {%- for step in process.steps %}
+      <li class="cp-ablauf__step">
+        <span class="cp-ablauf__number" aria-hidden="true">{{ step.number }}</span>
+        <h3 class="cp-ablauf__title">{{ step.title }}</h3>
+        <p class="cp-ablauf__description">{{ step.description }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+
+  </div>
+</section>

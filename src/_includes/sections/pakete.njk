@@ -1,0 +1,40 @@
+{# Inhalte: src/_data/packages.json — items[] als Vergleich, addons[] als Liste.
+   Auf breiten Schirmen eine dreispaltige Tabelle, mobil gestapelte Karten.
+   Beide Darstellungen speisen sich aus denselben Daten. #}
+
+<section class="cp-section cp-pakete" id="pakete" aria-labelledby="pakete-titel">
+  <div class="cp-container">
+
+    <p class="cp-kicker">Pakete</p>
+    <h2 class="cp-h2" id="pakete-titel">Klar geschnürt. Monatlich kündbar.</h2>
+    <p class="cp-pakete__note">{{ packages.note }}</p>
+
+    <div class="cp-pakete__grid">
+      {%- for item in packages.items %}
+      <article class="cp-paket" id="paket-{{ item.id }}">
+        <h3 class="cp-paket__title">{{ item.title }}</h3>
+        <p class="cp-paket__kind">{{ item.kind }}</p>
+
+        <dl class="cp-paket__meta">
+          <dt class="cp-paket__dt">Inhalt</dt>
+          <dd class="cp-paket__dd">{{ item.contents }}</dd>
+          <dt class="cp-paket__dt">Ergebnis</dt>
+          <dd class="cp-paket__dd cp-paket__result">{{ item.result }}</dd>
+        </dl>
+
+        <a class="cp-paket__cta" href="mailto:{{ site.email }}?subject={{ item.title | urlencode }}">{{ item.cta }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+
+    <div class="cp-addons">
+      <h3 class="cp-addons__title">Ergänzend buchbar</h3>
+      <ul class="cp-addons__list" role="list">
+        {%- for addon in packages.addons %}
+        <li class="cp-addons__item">{{ addon }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+
+  </div>
+</section>

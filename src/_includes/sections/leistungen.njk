@@ -1,32 +1,28 @@
-{# Inhalte: src/_data/services.json — Gruppen und Leistungen nur dort pflegen.
-   Die Zahl der Gruppen und die Zahl der Einträge je Gruppe sind frei:
-   das Raster richtet sich nach dem Inhalt, nicht umgekehrt. #}
+{# Inhalte: src/_data/services.json — fünf Leistungssäulen.
+   Jede Säule: id, title, teaser, bullets[]; badge ist optional und
+   erzeugt eine sichtbare Auszeichnung (z. B. GEO = Kernkompetenz). #}
 
 <section class="cp-section cp-leistungen" id="leistungen" aria-labelledby="leistungen-titel">
   <div class="cp-container">
 
     <p class="cp-kicker">Leistungen</p>
-    <h2 class="cp-h2" id="leistungen-titel">Drei Felder, ein Team.</h2>
+    <h2 class="cp-h2" id="leistungen-titel">Fünf Hebel für digitale Sichtbarkeit.</h2>
 
-    <div class="cp-leistungen__groups">
-      {%- for group in services %}
-      <article class="cp-leistung" id="{{ group.id }}">
-        <h3 class="cp-leistung__title">{{ group.title }}</h3>
+    <div class="cp-pillars">
+      {%- for pillar in services %}
+      <article class="cp-pillar" id="{{ pillar.id }}">
+        <div class="cp-pillar__head">
+          <h3 class="cp-pillar__title">{{ pillar.title }}</h3>
+          {%- if pillar.badge %}
+          <span class="cp-pillar__badge">{{ pillar.badge }}</span>
+          {%- endif %}
+        </div>
 
-        {%- if group.headline %}
-        <p class="cp-leistung__headline">{{ group.headline }}</p>
-        {%- endif %}
+        <p class="cp-pillar__teaser">{{ pillar.teaser }}</p>
 
-        {%- if group.note %}
-        <p class="cp-leistung__note">{{ group.note }}</p>
-        {%- endif %}
-
-        <ul class="cp-leistung__items" role="list">
-          {%- for item in group.items %}
-          <li class="cp-leistung__item">
-            <h4 class="cp-leistung__name">{{ item.name }}</h4>
-            <p class="cp-leistung__description">{{ item.description }}</p>
-          </li>
+        <ul class="cp-pillar__bullets" role="list">
+          {%- for bullet in pillar.bullets %}
+          <li class="cp-pillar__bullet">{{ bullet }}</li>
           {%- endfor %}
         </ul>
       </article>

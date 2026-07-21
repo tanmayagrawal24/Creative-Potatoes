@@ -15,20 +15,5 @@
   "locale": "de_DE",
   "lang": "de",
 
-  "url": "https://creative-potatoes.pages.dev",
-
-  "proofPoints": [
-    {
-      "label": "Ein Team, ein Ansprechpartner",
-      "description": "Keine Schnittstellenverluste, keine Abstimmungsketten. Eine Ansprechpartnerin oder ein Ansprechpartner über alle Disziplinen hinweg."
-    },
-    {
-      "label": "Vollständige Betreuung, 360°",
-      "description": "Von der Strategie über Content und Kampagnen bis zur Retention — der gesamte Funnel aus einer Hand."
-    },
-    {
-      "label": "Ausrichtung auf DACH — DE / AT / CH",
-      "description": "Sprache, Marktlogik und regulatorischer Rahmen des deutschsprachigen Raums sind der Ausgangspunkt, nicht die Übersetzung."
-    }
-  ]
+  "url": "https://creative-potatoes.pages.dev"
 }

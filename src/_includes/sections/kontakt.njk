@@ -1,17 +1,30 @@
-{# Inhalte: site.email und site.tagline in src/_data/site.json
-   id="kontakt" ist das Sprungziel des Links im Kopfbereich (hero.njk). #}
+{# Kontakt — bewusst ein mailto:-Link, kein Formular.
+
+   Cloudflare Pages hat kein Backend. Ein eingebundener Formular-
+   dienst eines Dritten würde Besucherdaten an einen fremden Server
+   senden und der Aussage in der Datenschutzerklärung widersprechen,
+   dass keine Anfragen an Dritte gestellt werden.
+
+   Wenn später doch ein Formular gewünscht ist, gehört die Verarbeitung
+   in eine Cloudflare Pages Function unter /functions/kontakt.js
+   (gleiche Domain, kein Drittanbieter). Der Endpunkt käme hierher:
+
+   <form method="POST" action="/api/kontakt"> … </form>
+
+   Bis dahin ist die E-Mail-Adresse der direkte Weg. #}
 
 <section class="cp-section cp-kontakt" id="kontakt" aria-labelledby="kontakt-titel">
   <div class="cp-container">
 
     <p class="cp-kicker">Kontakt</p>
-    <h2 class="cp-h2" id="kontakt-titel">{{ site.tagline }}</h2>
+    <h2 class="cp-h2" id="kontakt-titel">{{ site.ctaPrimary }}</h2>
 
     <p class="cp-kontakt__text">
-      Erzählen Sie uns kurz, woran Sie arbeiten. Wir melden uns innerhalb von zwei Werktagen.
+      Schreiben Sie mir kurz, woran Sie arbeiten und wo es hakt. Ich melde
+      mich innerhalb von zwei Werktagen mit einer ersten Einschätzung.
     </p>
 
-    <a class="cp-kontakt__email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    <a class="cp-kontakt__email" href="mailto:{{ site.email }}?subject=Erstgespr%C3%A4ch">{{ site.email }}</a>
 
   </div>
 </section>
