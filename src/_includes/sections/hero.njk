@@ -1,6 +1,10 @@
 {# hero.njk — Startbereich Creative Potatoes
    OWNED BY DESIGN AGENT.
-   Dies ist der <header> der Seite. Die Shell darf KEINEN weiteren Header rendern. #}
+   Dies ist der <header> der Seite. Die Shell darf KEINEN weiteren Header rendern.
+   Erwartete Datenwerte in site.json:
+     kicker, tagline, originStatementA, originStatementB,
+     heroSubline, lede, ctaPrimary, ctaSecondary
+#}
 <header class="sig-hero">
   <div class="sig-shell">
     <nav class="sig-topbar" aria-label="Hauptnavigation">
@@ -12,18 +16,23 @@
     </nav>
 
     <div class="sig-hero-stage">
-      <p class="sig-kicker">Kreativ- &amp; Marketingagentur · DACH</p>
+      <p class="sig-kicker">{{ site.kicker }}</p>
 
-      <h1 class="sig-h1">{{ site.tagline | replace(".", "") }}<span class="sig-dot">.</span></h1>
+      <h1 class="sig-h1">{{ site.tagline.slice(0, -1) }}<span class="sig-dot">{{ site.tagline.slice(-1) }}</span></h1>
 
       <p class="sig-claim">
-        <span class="sig-claim-half">Indische Kreativkraft.</span>
-        <span class="sig-claim-half">Deutsches Marktverständnis.</span>
+        <span class="sig-claim-half">{{ site.originStatementA }}</span>
+        <span class="sig-claim-half">{{ site.originStatementB }}</span>
       </p>
 
-      <p class="sig-lede">Wir entwickeln Kampagnen, Content und Motion für inhabergeführte D2C- und Mittelstandsmarken — leise im Auftritt, genau im Handwerk, spürbar im Ergebnis.</p>
+      <p class="sig-subline">{{ site.heroSubline }}</p>
 
-      <a class="sig-cta" href="#craft">Wie wir arbeiten</a>
+      <p class="sig-lede">{{ site.lede }}</p>
+
+      <p class="sig-cta-row">
+        <a class="sig-cta" href="#kontakt">{{ site.ctaPrimary }}</a>
+        <a class="sig-cta-secondary" href="#leistungen">{{ site.ctaSecondary }}</a>
+      </p>
     </div>
   </div>
 </header>

@@ -438,3 +438,63 @@
     display: none;
   }
 }
+
+/* ==========================================================================
+   ANHÄNGEN an das Ende von signature.css — NICHT die Datei ersetzen.
+   Ergänzung: Subline, CTA-Zeile, sekundärer CTA.
+   OWNED BY DESIGN AGENT.
+   ========================================================================== */
+
+/* Brücke zwischen Claim und Lede: fester als die Lede,
+   leiser als H1 und Claim. */
+.sig-subline {
+  margin: var(--cp-space-5) auto 0;
+  max-inline-size: 40ch;
+  font-size: var(--cp-step-1);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--cp-ink);
+  text-wrap: balance;
+}
+
+.sig-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: var(--cp-space-3) var(--cp-space-6);
+  margin: var(--cp-space-6) 0 0;
+}
+
+/* .sig-cta bleibt die betonte Aktion (Goldunterstreichung).
+   Der sekundäre CTA tritt eine Stufe zurück und erhält
+   die Goldlinie erst beim Hover. */
+.sig-cta-row .sig-cta {
+  margin-block-start: 0;
+}
+
+.sig-cta-secondary {
+  display: inline-block;
+  font-size: var(--cp-step-0);
+  font-weight: 400;
+  color: var(--cp-ink-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--cp-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35em;
+  transition:
+    color calc(var(--cp-dur) / 2) var(--cp-ease),
+    text-decoration-color calc(var(--cp-dur) / 2) var(--cp-ease);
+}
+
+.sig-cta-secondary:hover {
+  color: var(--cp-ink);
+  text-decoration-color: var(--cp-accent);
+}
+
+/* Einstiegsanimation: die Bühne hat jetzt sechs Kinder. */
+@media (prefers-reduced-motion: no-preference) {
+  .sig-hero-stage > :nth-child(6) {
+    animation-delay: calc(var(--cp-dur) * 0.75);
+  }
+}
