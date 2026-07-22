@@ -438,6 +438,35 @@
   text-underline-offset: 0.45em;
 }
 
+/* ---------- Logo-Slot: Marke + Schriftzug ----------
+   .cp-logo (inline-flex, align-items:center, feste Slot-Höhe) und
+   .cp-logo-wordmark liegen in signature.css. Hier nur die Ergänzungen
+   für die zweite Bildmarke: Abstand, Größe der Marke und ein
+   Container, der beide Kinder umschließt statt auf die alte
+   Ein-Bild-Breite zu klemmen.
+
+   a.cp-logo hebt gezielt die feste inline-size aus signature.css auf
+   (element+klasse schlägt die dortige Klassenregel) — die block-size
+   bleibt bewusst erhalten, damit die %-Höhen der Kinder auflösen. */
+a.cp-logo {
+  inline-size: fit-content;
+  gap: var(--cp-space-2);
+}
+
+/* Marke: 80 % der Slot-Höhe -> 32px (Desktop) / 24px (Mobil), also
+   bewusst niedriger als die Versalhöhe des Schriftzugs. Seiten-
+   verhältnis über inline-size:auto erhalten (Quelle 70x100). */
+.cp-logo-mark {
+  flex: none;
+  display: block;
+  block-size: 80%;
+  inline-size: auto;
+}
+
+.cp-logo-wordmark {
+  flex: none;
+}
+
 /* ---------- Kopfbereich der Unterseiten ----------
    Gegenstück zu .sig-topbar aus signature.css, aber schmaler:
    auf den Unterseiten trägt die Seite ihre eigene <h1>. */

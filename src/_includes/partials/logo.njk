@@ -1,17 +1,22 @@
 {# ---------------------------------------------------------------
    LOGO-SLOT
 
-   Exakt dasselbe Markup wie im Kopfbereich (hero.njk, betreut vom
-   Design-Team). Beide Stellen müssen identisch bleiben — die
-   Klassennamen .cp-logo und .cp-logo-fallback werden in
-   signature.css gestaltet.
+   Symbolmarke (bone) + Schriftzug. Exakt dasselbe Markup wie im
+   Kopfbereich der Startseite (hero.njk) — beide müssen identisch
+   bleiben. .cp-logo / .cp-logo-fallback werden in signature.css
+   gestaltet; Flex/Gap und die Größe von Marke und Schriftzug in
+   sections.css (cp-eigen).
 
-   Platz ist fest reserviert: 160x40 Desktop, 120x30 Mobil.
-   Fehlt src/assets/logo.svg, ersetzt der onerror-Handler das Bild
-   durch den Schriftzug. Siehe README, "Logo einsetzen".
+   Die Marke ist rein dekorativ (alt=""); der Schriftzug trägt den
+   zugänglichen Namen. Fehlt src/assets/logo.svg, ersetzt der
+   onerror-Handler den Schriftzug durch den Text-Fallback.
+   Nur die bone-Variante — der Grund ist --cp-bg (#14110E).
    --------------------------------------------------------------- #}
 
-<a class="cp-logo" href="/" aria-label="{{ site.name }}">
-  <img src="/assets/logo.svg" alt="{{ site.name }}" width="160" height="40"
+<a class="cp-logo" href="/" aria-label="{{ site.name }} — Startseite">
+  <img class="cp-logo-mark" src="/assets/logo/mark-bone-transparent.png" alt=""
+       width="70" height="100" decoding="async">
+  <img class="cp-logo-wordmark" src="/assets/logo.svg" alt="{{ site.name }}"
+       width="160" height="40"
        onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'cp-logo-fallback',textContent:'Creative Potatoes'}))">
 </a>
