@@ -38,7 +38,15 @@
 
 /* ---------- Leistungen: fünf Säulen als Karten ----------
    align-items: start, damit unterschiedlich lange Karten (6/6/4/4/4
-   Bullets) nicht auf gemeinsame Höhe gestreckt werden. */
+   Bullets) nicht auf gemeinsame Höhe gestreckt werden.
+
+   ZWEI Spalten, nicht drei. Bei --cp-maxw (70rem) bleiben nach
+   Containerpolster und Spalten­abstand rund 1040px übrig. Auf drei
+   Spalten verteilt ergibt das je Karte etwa 300px, abzüglich
+   Innenabstand rund 224px Textbreite — zu wenig für deutsche
+   Komposita: „Unternehmensseiten" allein ist breiter als die Spalte.
+   Zwei Spalten ergeben rund 420px Textbreite, also 55–60 Zeichen
+   pro Zeile. Das ist der Bereich, in dem Fließtext gut lesbar ist. */
 
 .cp-pillars {
   display: grid;
@@ -46,31 +54,48 @@
   align-items: start;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 56em) {
   .cp-pillars {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--cp-space-6);
+    column-gap: var(--cp-space-5);
+    row-gap: var(--cp-space-6);
+  }
+
+  /* Bei ungerader Anzahl läuft die letzte Karte über beide Spalten,
+     damit unten kein halbleeres Raster stehen bleibt. Die Klasse
+     setzt leistungen.njk selbst — bei gerader Anzahl entfällt sie. */
+  .cp-pillar--wide {
+    grid-column: 1 / -1;
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 70em) {
   .cp-pillars {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--cp-space-6);
   }
 }
 
 .cp-pillar {
-  padding: var(--cp-space-5);
+  padding: var(--cp-space-4);
   background: var(--cp-surface);
   border: 1px solid var(--cp-line);
   border-radius: var(--cp-radius);
 }
 
+@media (min-width: 56em) {
+  .cp-pillar {
+    padding: var(--cp-space-5);
+  }
+}
+
+/* Titel und Auszeichnung stehen untereinander. Nebeneinander (baseline)
+   verhakten sie sich, sobald der Titel umbrach — die Auszeichnung
+   landete dann auf Höhe der letzten Titelzeile. */
 .cp-pillar__head {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--cp-space-3);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--cp-space-2);
   margin-block-end: var(--cp-space-3);
 }
 
@@ -80,6 +105,9 @@
   font-size: var(--cp-step-2);
   font-weight: 420;
   line-height: 1.15;
+  text-wrap: balance;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 .cp-pillar__badge {
@@ -97,10 +125,12 @@
 
 .cp-pillar__teaser {
   margin: 0 0 var(--cp-space-4);
+  max-inline-size: 46ch;
   color: var(--cp-ink-muted);
   font-size: var(--cp-step-1);
   line-height: 1.45;
   text-wrap: pretty;
+  hyphens: auto;
 }
 
 .cp-pillar__bullets {
@@ -111,6 +141,15 @@
   gap: var(--cp-space-3);
 }
 
+/* Die durchlaufende Karte ist rund doppelt so breit; ihre Punkte
+   stehen zweispaltig, damit die Zeilen nicht zu lang werden. */
+@media (min-width: 56em) {
+  .cp-pillar--wide .cp-pillar__bullets {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--cp-space-6);
+  }
+}
+
 .cp-pillar__bullet {
   position: relative;
   padding-inline-start: var(--cp-space-4);
@@ -118,6 +157,7 @@
   font-size: var(--cp-step--1);
   line-height: 1.6;
   text-wrap: pretty;
+  hyphens: auto;
 }
 
 .cp-pillar__bullet::before {

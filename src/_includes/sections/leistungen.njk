@@ -10,7 +10,9 @@
 
     <div class="cp-pillars">
       {%- for pillar in services %}
-      <article class="cp-pillar" id="{{ pillar.id }}">
+      {#- Bei ungerader Anzahl läuft die letzte Karte über beide Spalten.
+          Kommt eine sechste Leistung dazu, entfällt das automatisch. #}
+      <article class="cp-pillar{% if loop.last and services.length % 2 == 1 %} cp-pillar--wide{% endif %}" id="{{ pillar.id }}">
         <div class="cp-pillar__head">
           <h3 class="cp-pillar__title">{{ pillar.title }}</h3>
           {%- if pillar.badge %}
