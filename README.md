@@ -78,7 +78,9 @@ Alle Inhalte liegen im Ordner `src/_data/` als `.json`-Dateien.
 | --- | --- |
 | `site.json` | Name, Claim, Herkunftssatz, die drei Belegpunkte, E-Mail-Adresse |
 | `services.json` | Die Leistungsgruppen mit ihren Einzelleistungen |
-| `approach.json` | Überschrift und die Schritte Verstehen / Aufbauen / Skalieren |
+| `packages.json` | Die Pakete und die Zusatzleistungen |
+| `process.json` | Überschrift und die Schritte des Ablaufs |
+| `faq.json` | Die häufigen Fragen mit ihren Antworten |
 | `references.json` | Die Referenzen |
 
 Die Navigation besteht bewusst nur aus dem Logo und einem Kontakt-Link im
@@ -195,6 +197,10 @@ angelegt sein (4:1), damit nichts verzerrt oder springt.
 Schriftzug „Creative Potatoes" an derselben Stelle. Die Seite ist also auch
 ohne Logo vollständig benutzbar.
 
+Ob die Datei vorhanden ist, wird beim Bauen geprüft. Wird sie nachträglich
+hinzugefügt oder entfernt, während `npm start` läuft, ist einmal **Strg + C**
+und `npm start` nötig, damit die Änderung greift.
+
 ---
 
 ## 7. Einen ganzen Abschnitt entfernen
@@ -204,8 +210,8 @@ Zeile pro Abschnitt:
 
 ```
 {% include "sections/hero.njk" %}
-{% include "sections/positionierung.njk" %}
 {% include "sections/leistungen.njk" %}
+{% include "sections/craft.njk" %}
 ...
 ```
 

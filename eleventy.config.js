@@ -49,13 +49,16 @@ export default function (eleventyConfig) {
   // Static assets (logo SVG, images, favicons) once they exist.
   eleventyConfig.addPassthroughCopy("src/assets");
 
+  // Ist der Schriftzug vorhanden? Die Antwort fällt beim Bauen, nicht
+  // im Browser: ein onerror-Attribut im Markup ist ein Inline-Handler
+  // und wird von der CSP (script-src 'self') blockiert — der Ersatz-
+  // Schriftzug erschien deshalb nie. Siehe README, Abschnitt 6.
+  eleventyConfig.addGlobalData("hasWordmark", () =>
+    fs.existsSync(path.join("src", "assets", "logo.svg"))
+  );
+
   // Live-reload the browser when a stylesheet changes.
   eleventyConfig.addWatchTarget("src/css/");
-
-  // Used by sitemap.xml and the canonical/OG tags.
-  eleventyConfig.addFilter("isoDate", (value) =>
-    new Date(value).toISOString().slice(0, 10)
-  );
 
   // Current year, for the footer copyright line.
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);

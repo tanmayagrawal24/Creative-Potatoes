@@ -8,15 +8,20 @@
    sections.css (cp-eigen).
 
    Die Marke ist rein dekorativ (alt=""); der Schriftzug trägt den
-   zugänglichen Namen. Fehlt src/assets/logo.svg, ersetzt der
-   onerror-Handler den Schriftzug durch den Text-Fallback.
+   zugänglichen Namen. Fehlt src/assets/logo.svg, steht an seiner
+   Stelle der Text-Fallback. Ob die Datei da ist, entscheidet sich
+   beim Bauen (hasWordmark in eleventy.config.js) — ein onerror-
+   Attribut wäre ein Inline-Handler und von der CSP blockiert.
    Nur die bone-Variante — der Grund ist --cp-bg (#14110E).
    --------------------------------------------------------------- #}
 
 <a class="cp-logo" href="/" aria-label="{{ site.name }} — Startseite">
   <img class="cp-logo-mark" src="/assets/logo/mark-bone-transparent.png" alt=""
        width="70" height="100" decoding="async">
+  {%- if hasWordmark %}
   <img class="cp-logo-wordmark" src="/assets/logo.svg" alt="{{ site.name }}"
-       width="160" height="40"
-       onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'cp-logo-fallback',textContent:'Creative Potatoes'}))">
+       width="160" height="40">
+  {%- else %}
+  <span class="cp-logo-fallback">{{ site.name }}</span>
+  {%- endif %}
 </a>
