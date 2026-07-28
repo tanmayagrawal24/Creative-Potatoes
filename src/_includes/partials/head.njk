@@ -54,11 +54,17 @@
 <link rel="stylesheet" href="/css/tokens.css">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/sections.css">
+<link rel="stylesheet" href="/css/motion.css">
 <link rel="stylesheet" href="/css/signature.css">
 {%- if legal %}
 {# Nur auf Datenschutz, Über und 404 — nicht auf der Startseite. #}
 <link rel="stylesheet" href="/css/legal.css">
 {%- endif %}
+
+{# Scroll-Reveal für die cp-Abschnitte. Externe Datei, weil die CSP
+   (script-src 'self') Inline-Skripte blockiert. defer: läuft nach dem
+   Parsen, blockiert nichts. Ohne JavaScript ist alles sichtbar. #}
+<script src="/js/reveal.js" defer></script>
 
 <script type="application/ld+json">
 {

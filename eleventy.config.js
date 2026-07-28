@@ -39,6 +39,9 @@ export default function (eleventyConfig) {
   // Stylesheets are copied through untouched — no bundler, no framework.
   eleventyConfig.addPassthroughCopy("src/css");
 
+  // Ebenso das Scroll-Reveal-Skript (siehe src/js/reveal.js).
+  eleventyConfig.addPassthroughCopy("src/js");
+
   // Cloudflare Pages control files. Mapped explicitly so the leading
   // underscore is never mistaken for an Eleventy-internal directory.
   eleventyConfig.addPassthroughCopy({
@@ -59,6 +62,7 @@ export default function (eleventyConfig) {
 
   // Live-reload the browser when a stylesheet changes.
   eleventyConfig.addWatchTarget("src/css/");
+  eleventyConfig.addWatchTarget("src/js/");
 
   // Current year, for the footer copyright line.
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);

@@ -1,0 +1,226 @@
+/* =========================================================
+   MOTION — Bewegung für die cp-Abschnitte
+
+   Lädt NACH sections.css und VOR signature.css. Greift
+   ausschließlich auf .cp-* Klassen zu — die .sig-* Abschnitte
+   (Hero, Handwerk) bringen ihre eigene Bewegung in signature.css
+   mit; diese Datei ergänzt dieselbe Formensprache (sig-rise:
+   Aufsteigen + Einblenden, goldener Akzent) für den Rest der Seite.
+
+   Grundsätze:
+   - Nur transform und opacity — kein Layout-Shift (CLS 0).
+   - Alle Zeiten und Kurven aus den Tokens (--cp-dur, --cp-ease).
+   - Scroll-Reveal ist Progressive Enhancement: die Klasse
+     cp-reveal vergibt ausschließlich js/reveal.js. Ohne
+     JavaScript ist alles sichtbar.
+   - Reduced Motion schaltet am Ende der Datei ALLES ab.
+   ========================================================= */
+
+/* ---------- Scroll-Reveal ---------- */
+
+.cp-reveal {
+  opacity: 0;
+  transform: translateY(var(--cp-space-4));
+  transition:
+    opacity var(--cp-dur) var(--cp-ease),
+    transform var(--cp-dur) var(--cp-ease);
+  will-change: opacity, transform;
+}
+
+.cp-reveal--in {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* ---------- Goldene Linie über dem Kicker ----------
+   Die wiederkehrende kleine Geste der Seite: eine Akzentlinie,
+   die sich beim Erscheinen des Abschnitts von links aufzieht.
+   Nachfahre von .cp-reveal — ohne JavaScript steht die Linie
+   von Anfang an, nichts fehlt. */
+
+.cp-section .cp-kicker {
+  position: relative;
+  padding-block-start: var(--cp-space-3);
+}
+
+.cp-section .cp-kicker::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: var(--cp-space-6);
+  block-size: 1px;
+  background: var(--cp-accent);
+  transform-origin: left center;
+}
+
+.cp-section .cp-kicker.cp-reveal::before {
+  transform: scaleX(0);
+  transition: transform calc(var(--cp-dur) * 1.5) var(--cp-ease);
+  transition-delay: inherit;
+}
+
+.cp-section .cp-kicker.cp-reveal--in::before {
+  transform: scaleX(1);
+}
+
+/* ---------- Karten: Anheben und goldener Rand ----------
+   Leistungen und Pakete. transform statt margin — kein Reflow.
+   Der Rand wärmt sich zum Akzent auf; die Karte hebt sich leicht. */
+
+.cp-pillar,
+.cp-paket {
+  transition:
+    transform var(--cp-dur) var(--cp-ease),
+    border-color var(--cp-dur) var(--cp-ease),
+    box-shadow var(--cp-dur) var(--cp-ease);
+}
+
+/* :where() hält die Spezifität bei null, damit .cp-reveal
+   (opacity/transform) nicht mit dem Hover-transform kollidiert:
+   beide setzen transform, der Hover gilt erst nach dem Reveal. */
+:where(.cp-pillar, .cp-paket):hover {
+  transform: translateY(calc(var(--cp-space-1) * -1));
+  border-color: var(--cp-accent);
+  box-shadow: var(--cp-shadow);
+}
+
+/* Die Striche vor den Punkten wachsen auf Karten-Hover leicht an —
+   dieselbe Linie wie über dem Kicker, eine Nummer kleiner. */
+
+.cp-pillar__bullet::before {
+  transition:
+    inline-size var(--cp-dur) var(--cp-ease),
+    background-color var(--cp-dur) var(--cp-ease);
+}
+
+.cp-pillar:hover .cp-pillar__bullet::before {
+  inline-size: var(--cp-space-3);
+}
+
+/* Der Text rückt mit, damit Linie und Wort nicht kollidieren. */
+.cp-pillar__bullet {
+  transition: padding-inline-start var(--cp-dur) var(--cp-ease);
+}
+
+.cp-pillar:hover .cp-pillar__bullet {
+  padding-inline-start: var(--cp-space-5);
+}
+
+/* ---------- Ablauf: Nummern entzünden sich ----------
+   Die grossen Ziffern stehen in --cp-ink-faint (bewusst leise,
+   ausreichend Kontrast für Schmucktext dieser Grösse) und wechseln
+   beim Erscheinen ihres Schritts zum Akzent-Gold. */
+
+.cp-ablauf__number {
+  transition: color calc(var(--cp-dur) * 2) var(--cp-ease);
+}
+
+.cp-ablauf__step.cp-reveal .cp-ablauf__number {
+  color: var(--cp-ink-faint);
+}
+
+.cp-ablauf__step.cp-reveal--in .cp-ablauf__number {
+  color: var(--cp-accent);
+  transition-delay: calc(var(--cp-dur) * 0.5);
+}
+
+/* ---------- FAQ: Akkordeon ----------
+   Das +/–-Zeichen und seine Grundgestaltung stehen in sections.css.
+   Hier kommen nur Bewegung und Hover dazu: die Frage wärmt sich auf,
+   das Pluszeichen dreht sich beim Öffnen zum Minus, die Antwort
+   gleitet auf statt zu springen. */
+
+.cp-faq__q {
+  transition: color var(--cp-dur) var(--cp-ease);
+}
+
+.cp-faq__q:hover {
+  color: var(--cp-accent);
+}
+
+.cp-faq__item[open] > .cp-faq__q::after {
+  transform: rotate(180deg);
+}
+
+.cp-faq__item[open] > .cp-faq__a {
+  animation: cp-rise var(--cp-dur) var(--cp-ease) both;
+}
+
+/* ---------- Kontakt: Unterstreichung zieht sich auf ---------- */
+
+.cp-kontakt__email {
+  background-image: linear-gradient(var(--cp-accent), var(--cp-accent));
+  background-repeat: no-repeat;
+  background-position: left calc(100% - var(--cp-space-1));
+  background-size: 0% 1px;
+  transition: background-size calc(var(--cp-dur) * 1.5) var(--cp-ease);
+}
+
+.cp-kontakt__email:hover,
+.cp-kontakt__email:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* ---------- Fusszeilen-Links: dieselbe Geste, kleiner ---------- */
+
+.cp-footer__link,
+.cp-footer__email {
+  background-image: linear-gradient(var(--cp-accent), var(--cp-accent));
+  background-repeat: no-repeat;
+  background-position: left 100%;
+  background-size: 0% 1px;
+  transition: background-size var(--cp-dur) var(--cp-ease);
+}
+
+.cp-footer__link:hover,
+.cp-footer__email:hover,
+.cp-footer__link:focus-visible,
+.cp-footer__email:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes cp-rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--cp-space-2));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Reduced Motion: alles aus ----------
+   reveal.js startet bei dieser Präferenz erst gar nicht; das hier
+   fängt zusätzlich alle reinen CSS-Übergänge dieser Datei ab. */
+
+@media (prefers-reduced-motion: reduce) {
+  .cp-reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .cp-reveal,
+  .cp-section .cp-kicker::before,
+  .cp-pillar,
+  .cp-paket,
+  .cp-pillar__bullet,
+  .cp-pillar__bullet::before,
+  .cp-ablauf__number,
+  .cp-faq__q,
+  .cp-faq__item[open] > .cp-faq__a,
+  .cp-kontakt__email,
+  .cp-footer__link,
+  .cp-footer__email {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .cp-section .cp-kicker.cp-reveal::before {
+    transform: none;
+  }
+}
