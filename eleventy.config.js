@@ -60,6 +60,22 @@ export default function (eleventyConfig) {
     fs.existsSync(path.join("src", "assets", "logo.svg"))
   );
 
+  // ---------------------------------------------------------------
+  // VORSCHAU-MODUS — vor dem echten Start wieder entfernen!
+  //
+  // Solange die Seite noch [[Platzhalter]] enthält, soll Google sie
+  // nicht in den Index aufnehmen. Jede Seite bekommt dadurch
+  // <meta name="robots" content="noindex, follow"> (siehe head.njk).
+  //
+  // Bewusst KEIN "Disallow: /" in robots.txt: das würde das Abrufen
+  // verbieten, Google bekäme das noindex nie zu sehen und könnte die
+  // Adresse trotzdem listen. Crawlen erlauben, Indexieren verbieten.
+  //
+  // Zum Starten: diese eine Zeile löschen und die Sitemap-Zeile in
+  // src/robots.njk wieder freigeben.
+  eleventyConfig.addGlobalData("noindex", true);
+  // ---------------------------------------------------------------
+
   // Live-reload the browser when a stylesheet changes.
   eleventyConfig.addWatchTarget("src/css/");
   eleventyConfig.addWatchTarget("src/js/");

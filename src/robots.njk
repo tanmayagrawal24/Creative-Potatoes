@@ -4,5 +4,6 @@ eleventyExcludeFromCollections: true
 ---
 User-agent: *
 Allow: /
-
+{% if not noindex %}
 Sitemap: {{ "/sitemap.xml" | absoluteUrl(site.url) }}
+{%- endif %}
