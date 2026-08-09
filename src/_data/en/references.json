@@ -2,15 +2,25 @@
   {
     "client": "MEGASONEX",
     "sector": "Ultrasonic toothbrushes · D2C · DACH",
-    "scope": "[[Which services are running — to be completed by the owner, e.g. SEO, GEO, newsletter]]",
-    "summary": "[[Starting position and approach in one or two sentences — to be completed by the owner. No invented figures.]]",
+    "services": [
+      "seo",
+      "geo",
+      "social",
+      "newsletter",
+      "3d"
+    ],
     "url": "https://www.megasonex-m8.de"
   },
   {
     "client": "Quiet Please",
     "sector": "Acoustic panels made from PET felt · B2B and B2C · Germany",
-    "scope": "[[Which services are running — to be completed by the owner, e.g. SEO, GEO, newsletter]]",
-    "summary": "[[Starting position and approach in one or two sentences — to be completed by the owner. No invented figures.]]",
+    "services": [
+      "seo",
+      "geo",
+      "social",
+      "newsletter",
+      "3d"
+    ],
     "url": "https://www.quietplease.design"
   }
 ]

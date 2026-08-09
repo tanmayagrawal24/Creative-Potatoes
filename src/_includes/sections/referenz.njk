@@ -2,22 +2,27 @@
 
    Was hier stehen darf und was nicht:
 
-   Der Name, die Branche und der Link sind Angaben über das Kunden-
-   unternehmen — sie stammen vom Inhaber, nicht von der Kundenwebsite.
-   Es wird KEIN Text, kein Bild und kein Claim von dort übernommen.
+   Name, Branche und Link sind Angaben über das Kundenunternehmen. Sie
+   stammen vom Inhaber, nicht von der Kundenwebsite — es wird kein Text,
+   kein Bild und kein Claim von dort übernommen.
 
-   scope, summary und result beschreiben die eigene Arbeit. Sie kann
-   nur der Inhaber wahrheitsgemäß ausfüllen und stehen bis dahin als
-   [[Platzhalter]] hier. Es werden keine Kennzahlen erfunden.
+   summary und result beschreiben die eigene Arbeit und das Ergebnis.
+   Beide sind optional und fehlen, solange der Inhaber keinen belegbaren
+   Text geliefert hat. Der Absatz entfällt dann ganz. Das ist Absicht:
+   ein leerer Platzhalter auf einer Kundenseite wirkt wie Fülltext,
+   eine Karte ohne Absatz wirkt wie eine Karte ohne Absatz.
 
-   result ist optional: bei laufenden Projekten gibt es noch kein
-   Ergebnis, und dann fehlt der Absatz ganz — statt leer zu stehen. #}
+   Die Leistungen stehen in references.json nur als IDs ("seo", "geo",
+   …). Den sichtbaren Namen holt die Schleife unten aus services.json.
+   Dadurch kann die Referenzkarte nicht von den Leistungen abweichen,
+   und die englische Fassung ergibt sich ohne zweite Pflege. #}
 
 <section class="cp-section cp-referenz" id="referenz" aria-labelledby="referenz-titel">
   <div class="cp-container">
 
     <p class="cp-kicker">{{ ui.referenzKicker }}</p>
     <h2 class="cp-h2" id="referenz-titel">{{ ui.referenzHeadline }}</h2>
+    <p class="cp-referenz__note">{{ ui.referenzNote }}</p>
 
     <ul class="cp-referenzen" role="list">
       {%- for ref in references %}
@@ -25,18 +30,31 @@
         <p class="cp-referenz-card__sector">{{ ref.sector }}</p>
         <h3 class="cp-referenz-card__client">{{ ref.client }}</h3>
 
-        <p class="cp-referenz-card__scope">{{ ref.scope }}</p>
+        {%- if ref.summary %}
         <p class="cp-referenz-card__summary">{{ ref.summary }}</p>
+        {%- endif %}
 
         {%- if ref.result %}
         <p class="cp-referenz-card__result">{{ ref.result }}</p>
         {%- endif %}
 
+        {%- if ref.services %}
+        <ul class="cp-referenz-card__services" role="list">
+          {%- for id in ref.services %}
+          {%- for service in services %}
+          {%- if service.id == id %}
+          <li class="cp-referenz-card__service">{{ service.shortTitle }}</li>
+          {%- endif %}
+          {%- endfor %}
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+
         {%- if ref.url %}
-        {#- Fremde Adresse: rel="noopener noreferrer" trennt die neue
-            Seite vom eigenen Fenster und schickt keinen Referrer mit.
-            Das aria-label nennt den Kunden, damit im Screenreader nicht
-            mehrere gleichlautende „Website ansehen" nebeneinander stehen. #}
+        {#- Fremde Adresse: rel="noopener noreferrer" trennt die neue Seite
+            vom eigenen Fenster und schickt keinen Referrer mit. Das
+            aria-label nennt den Kunden, damit im Screenreader nicht
+            mehrere gleichlautende „Website ansehen" nebeneinanderstehen. #}
         <a class="cp-referenz-card__link" href="{{ ref.url }}"
            target="_blank" rel="noopener noreferrer"
            aria-label="{{ ui.referenzVisit }}: {{ ref.client }}">{{ ui.referenzVisit }}</a>

@@ -424,7 +424,17 @@
   text-wrap: balance;
 }
 
-.cp-referenz-card__scope,
+/* Einleitung unter der Überschrift — trägt den Hinweis, dass hier
+   bewusst noch keine Zahlen stehen. */
+.cp-referenz__note {
+  max-inline-size: 60ch;
+  margin: 0 0 var(--cp-space-6);
+  color: var(--cp-ink-muted);
+  font-size: var(--cp-step-0);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
 .cp-referenz-card__summary,
 .cp-referenz-card__result {
   margin: 0 0 var(--cp-space-3);
@@ -439,6 +449,29 @@
 
 .cp-referenz-card__result {
   color: var(--cp-ink);
+}
+
+/* Leistungs-Chips. Die Namen kommen aus services.json (shortTitle),
+   nicht aus der Referenzdatei — siehe Kommentar in referenz.njk. */
+
+.cp-referenz-card__services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cp-space-2);
+  margin: 0 0 var(--cp-space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.cp-referenz-card__service {
+  padding: var(--cp-space-1) var(--cp-space-3);
+  border: 1px solid var(--cp-line);
+  border-radius: var(--cp-radius);
+  background: var(--cp-surface-2);
+  color: var(--cp-ink-muted);
+  font-size: var(--cp-step--1);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 /* Der Link liegt am Fuss der Karte und trägt dieselbe aufziehende

@@ -2,6 +2,7 @@
   {
     "id": "seo",
     "title": "SEO for online shops & company websites",
+    "shortTitle": "SEO",
     "teaser": "Better Google rankings through content that sells — and technology that holds up.",
     "bullets": [
       "Keyword mapping and prioritisation: which terms are genuinely worth it for your business",
@@ -15,6 +16,7 @@
   {
     "id": "geo",
     "title": "GEO — visibility in AI search",
+    "shortTitle": "GEO",
     "badge": "Core competence",
     "teaser": "When customers ask an AI, the answer should come from your content.",
     "bullets": [
@@ -29,6 +31,7 @@
   {
     "id": "social",
     "title": "Social media & Google Business",
+    "shortTitle": "Social media",
     "teaser": "Your products visible where your customers already are every day.",
     "bullets": [
       "Product content for LinkedIn and Instagram: planning, copy, visuals",
@@ -40,6 +43,7 @@
   {
     "id": "newsletter",
     "title": "Newsletter marketing (Brevo)",
+    "shortTitle": "Newsletter",
     "teaser": "A direct line to your audience — GDPR-compliant via Brevo.",
     "bullets": [
       "Setup and template design in Brevo",
@@ -51,6 +55,7 @@
   {
     "id": "3d",
     "title": "3D animation & product film",
+    "shortTitle": "3D product film",
     "teaser": "As a 3D animator and filmmaker I show your products in ways photography cannot.",
     "bullets": [
       "3D product animations for your website, social media and trade fairs",

@@ -2,15 +2,25 @@
   {
     "client": "MEGASONEX",
     "sector": "Ultraschall-Zahnbürsten · D2C · DACH",
-    "scope": "[[Welche Leistungen laufen — vom Inhaber auszufüllen, z. B. SEO, GEO, Newsletter]]",
-    "summary": "[[Ausgangslage und Vorgehen in ein bis zwei Sätzen — vom Inhaber auszufüllen. Keine erfundenen Kennzahlen.]]",
+    "services": [
+      "seo",
+      "geo",
+      "social",
+      "newsletter",
+      "3d"
+    ],
     "url": "https://www.megasonex-m8.de"
   },
   {
     "client": "Quiet Please",
     "sector": "Akustikpaneele aus PET-Vlies · B2B und B2C · Deutschland",
-    "scope": "[[Welche Leistungen laufen — vom Inhaber auszufüllen, z. B. SEO, GEO, Newsletter]]",
-    "summary": "[[Ausgangslage und Vorgehen in ein bis zwei Sätzen — vom Inhaber auszufüllen. Keine erfundenen Kennzahlen.]]",
+    "services": [
+      "seo",
+      "geo",
+      "social",
+      "newsletter",
+      "3d"
+    ],
     "url": "https://www.quietplease.design"
   }
 ]
