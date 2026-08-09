@@ -3,10 +3,20 @@ permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{#- Seiten, die es in beiden Sprachen gibt, nennen einander hier
+    gegenseitig. Suchmaschinen erfahren so, dass "/" und "/en/" dieselbe
+    Seite in zwei Sprachen sind und nicht doppelter Inhalt. Die Werte
+    stehen im Kopf der jeweiligen Seite (altDe / altEn). #}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {%- for item in collections.all %}
   <url>
     <loc>{{ item.url | absoluteUrl(site.url) }}</loc>
+{%- if item.data.altDe and item.data.altEn %}
+    <xhtml:link rel="alternate" hreflang="de" href="{{ item.data.altDe | absoluteUrl(site.url) }}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ item.data.altEn | absoluteUrl(site.url) }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ item.data.altDe | absoluteUrl(site.url) }}"/>
+{%- endif %}
   </url>
 {%- endfor %}
 </urlset>

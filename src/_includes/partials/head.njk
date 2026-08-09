@@ -21,6 +21,17 @@
 <link rel="canonical" href="{{ canonical }}">
 {%- endif %}
 
+{#- Sprachalternativen. Nur auf Seiten, die es in beiden Fassungen gibt —
+    die Seite setzt dafür altDe und altEn im Seitenkopf. Die Rechtstexte
+    bestehen bewusst nur auf Deutsch und bekommen deshalb keine.
+    x-default zeigt auf die deutsche Fassung: sie ist die Hauptfassung
+    und liegt unter "/". #}
+{%- if altDe and altEn %}
+<link rel="alternate" hreflang="de" href="{{ altDe | absoluteUrl(site.url) }}">
+<link rel="alternate" hreflang="en" href="{{ altEn | absoluteUrl(site.url) }}">
+<link rel="alternate" hreflang="x-default" href="{{ altDe | absoluteUrl(site.url) }}">
+{%- endif %}
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{{ site.name }}">
 <meta property="og:locale" content="{{ site.locale }}">
@@ -108,7 +119,7 @@
       "availableLanguage": ["de", "en"],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Leistungen",
+        "name": {{ ui.leistungenKicker | dump | safe }},
         "itemListElement": [
           {%- for pillar in services %}
           {
@@ -128,13 +139,13 @@
       "@id": "{{ site.url }}/#website",
       "url": "{{ site.url }}",
       "name": "{{ site.name }}",
-      "inLanguage": "de-DE",
+      "inLanguage": "{{ site.locale | replace("_", "-") }}",
       "publisher": { "@id": "{{ site.url }}/#organization" }
     }
-    {%- if page.url == "/" %},
+    {%- if home %},
     {
       "@type": "FAQPage",
-      "@id": "{{ site.url }}/#faq",
+      "@id": "{{ canonical }}#faq",
       "mainEntity": [
         {%- for entry in faq %}
         {

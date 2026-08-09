@@ -1,0 +1,60 @@
+{
+  "skipLink": "Skip to content",
+
+  "navLabel": "Main navigation",
+  "navContact": "Contact",
+  "logoHome": "Home",
+  "homeHref": "/en/",
+
+  "langSwitchHref": "/",
+  "langSwitchLabel": "DE",
+  "langSwitchTitle": "Auf Deutsch wechseln",
+  "langSwitchHreflang": "de",
+
+  "leistungenKicker": "Services",
+  "leistungenHeadline": "Five levers for digital visibility.",
+
+  "paketeKicker": "Packages",
+  "paketeHeadline": "Clearly defined. Cancel monthly.",
+  "paketeContents": "Included",
+  "paketeResult": "Outcome",
+  "addonsTitle": "Available as add-ons",
+
+  "ablaufKicker": "Process",
+
+  "roadmapKicker": "Roadmap",
+  "roadmapLead": "In preparation: Google Ads & Meta Ads.",
+  "roadmapBody": "I will only add performance marketing to the offering once I can deliver it to the standard you would expect from the rest of my work.",
+
+  "abgrenzungKicker": "Scope",
+  "abgrenzungLead": "What I don't offer:",
+  "abgrenzungBody": "bought backlink packages and shop development. For technical implementation I work closely with your agency or IT team, handling the coordination between us.",
+
+  "referenzKicker": "Reference",
+  "referenzHeadline": "Current project: mid-sized online shop (DACH region)",
+  "referenzBody": "[[Reference text — to be completed by the owner. Starting position, approach and outcome in two to four sentences. No invented figures; only numbers that can be evidenced.]]",
+
+  "faqKicker": "FAQ",
+  "faqHeadline": "Frequently asked questions.",
+
+  "kontaktKicker": "Contact",
+  "kontaktText": "Tell me briefly what you are working on and where it is stuck. I will come back to you within two working days with an initial assessment.",
+  "kontaktSubject": "Initial consultation",
+
+  "footerNavLabel": "Legal and about",
+  "footerUeber": "About (German)",
+  "footerDatenschutz": "Privacy policy (German)",
+
+  "craftKicker": "Craft",
+  "craftHeadline": "From storyboard to screen",
+  "craftStand": "For me creative work is not chance but craft — trained on the image, thought through in motion.",
+  "craft1Title": "Thinking in storyboards",
+  "craft1Text": "My roots are in comics and storyboard art — a trained eye for timing, visual flow and hierarchy in every piece.",
+  "craft1Caption": "Illustration: a hand-drawn storyboard sheet with six panels — sketches of a bottle, arrows and scribbled notes.",
+  "craft2Title": "Motion as empathy",
+  "craft2Text": "Movement brings a brand's personality to life: product features become benefits people can actually feel.",
+  "craft2Caption": "Illustration: the same bottle as a 3D wireframe in the viewport — axis gizmo, control points and a golden motion path.",
+  "craft3Title": "Scrappy to luxury",
+  "craft3Text": "The same narrative precision — whether it is a quick social post or a high-end brand campaign.",
+  "craft3Caption": "Illustration: the finished bottle in warm, directional light with a golden rim highlight."
+}

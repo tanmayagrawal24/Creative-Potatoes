@@ -1,0 +1,62 @@
+[
+  {
+    "id": "seo",
+    "title": "SEO for online shops & company websites",
+    "teaser": "Better Google rankings through content that sells — and technology that holds up.",
+    "bullets": [
+      "Keyword mapping and prioritisation: which terms are genuinely worth it for your business",
+      "SEO copy for category, product and landing pages (600–1,000 words, matched to search intent)",
+      "Implementation included: heading structure, meta data, internal linking, UX check",
+      "Reworking existing pages that fail to rank — including moving them onto dedicated landing pages",
+      "Index management and resolving keyword cannibalisation",
+      "Sector landing pages for your most important audiences"
+    ]
+  },
+  {
+    "id": "geo",
+    "title": "GEO — visibility in AI search",
+    "badge": "Core competence",
+    "teaser": "When customers ask an AI, the answer should come from your content.",
+    "bullets": [
+      "AI visibility check: is your company being cited by AI systems — and if not, why not?",
+      "SEO/GEO expert articles: substantive pieces structured for both Google rankings and AI citation",
+      "Reworking existing articles so AI systems can extract from them (question-and-answer structure)",
+      "Author profiles and E-E-A-T: credible author pages so your content counts as a source",
+      "Structured data (schema.org) for articles and products",
+      "Topic gap analysis: the questions your audience is asking, with search volumes — as a content pipeline"
+    ]
+  },
+  {
+    "id": "social",
+    "title": "Social media & Google Business",
+    "teaser": "Your products visible where your customers already are every day.",
+    "bullets": [
+      "Product content for LinkedIn and Instagram: planning, copy, visuals",
+      "Content repurposing: one expert article becomes a month of social media content",
+      "Google Business Profile: setup, maintenance, regular posts",
+      "A consistent presence across every channel"
+    ]
+  },
+  {
+    "id": "newsletter",
+    "title": "Newsletter marketing (Brevo)",
+    "teaser": "A direct line to your audience — GDPR-compliant via Brevo.",
+    "bullets": [
+      "Setup and template design in Brevo",
+      "Monthly campaign production — you approve and send to your audience",
+      "Turning your expert articles and product news into newsletter content",
+      "Simple automations, such as a welcome sequence"
+    ]
+  },
+  {
+    "id": "3d",
+    "title": "3D animation & product film",
+    "teaser": "As a 3D animator and filmmaker I show your products in ways photography cannot.",
+    "bullets": [
+      "3D product animations for your website, social media and trade fairs",
+      "Explainer videos for technical products and processes",
+      "Short product films for social media campaigns",
+      "Directly integrated with your content plan — no separate studio needed"
+    ]
+  }
+]

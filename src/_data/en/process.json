@@ -1,0 +1,26 @@
+{
+  "headline": "How I work with you.",
+  "note": "The same method specialist German SEO agencies use — as a freelancer, without the agency overhead.",
+  "steps": [
+    {
+      "number": "01",
+      "title": "Monthly plan",
+      "description": "At the start of each month you receive a concrete plan of measures, with hours allocated per task."
+    },
+    {
+      "number": "02",
+      "title": "Approval",
+      "description": "No task starts without your sign-off. Full control over budget and priorities."
+    },
+    {
+      "number": "03",
+      "title": "Delivery & tracking",
+      "description": "Every measure is documented: URL, keyword, status, date."
+    },
+    {
+      "number": "04",
+      "title": "Reporting",
+      "description": "At month end: planned versus actual hours, results, and recommendations for the month ahead."
+    }
+  ]
+}

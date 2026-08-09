@@ -7,15 +7,19 @@
 #}
 <header class="sig-hero">
   <div class="sig-shell">
-    <nav class="sig-topbar" aria-label="Hauptnavigation">
-      <a class="cp-logo" href="/" aria-label="Creative Potatoes — Startseite">
-        <img class="cp-logo-mark" src="/assets/logo/mark-bone-transparent.png" alt=""
-             width="70" height="100" decoding="async">
-        <img class="cp-logo-wordmark" src="/assets/logo.svg" alt="Creative Potatoes"
-             width="160" height="40"
-             onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'cp-logo-fallback',textContent:'Creative Potatoes'}))">
-      </a>
-      <a class="sig-topbar-link" href="#kontakt">Kontakt</a>
+    <nav class="sig-topbar" aria-label="{{ ui.navLabel }}">
+      {% include "partials/logo.njk" %}
+      <div class="cp-topbar-actions">
+        <a class="sig-topbar-link" href="#kontakt">{{ ui.navContact }}</a>
+        {#- Sprachumschalter. Beschriftung und Ziel stehen im Sprachpaket
+            (ui.json): auf der deutschen Seite führt er nach /en/, auf der
+            englischen zurück nach /. lang/hreflang sagen Vorlese-
+            programmen und Suchmaschinen, dass das Ziel eine andere
+            Sprache hat — sonst liest der Screenreader "EN" deutsch vor. #}
+        <a class="cp-lang-switch" href="{{ ui.langSwitchHref }}"
+           lang="{{ ui.langSwitchHreflang }}" hreflang="{{ ui.langSwitchHreflang }}"
+           title="{{ ui.langSwitchTitle }}">{{ ui.langSwitchLabel }}</a>
+      </div>
     </nav>
 
     <div class="sig-hero-stage">

@@ -4,22 +4,42 @@ import { schemas, validateData } from "./lib/data-schema.js";
 
 const DATA_DIR = "src/_data";
 
-/* Prüft die Inhaltsdateien, bevor Eleventy irgendetwas rendert.
-   Ein Fehler bricht den Build ab — siehe lib/data-schema.js. */
-function assertDataShape() {
-  const dataByFile = {};
-  const parseErrors = [];
+/* Die Sprachen der Seite. Die erste ist die Vorgabe und liegt unter "/",
+   jede weitere unter "/<code>/". Eine Sprache ergänzen heißt: Ordner
+   src/_data/<code>/ anlegen, hier eintragen, Einstiegsseite unter
+   src/<code>/ anlegen. */
+const LANGS = ["de", "en"];
+const DEFAULT_LANG = LANGS[0];
 
-  for (const file of Object.keys(schemas)) {
-    const full = path.join(DATA_DIR, file);
-    try {
-      dataByFile[file] = JSON.parse(fs.readFileSync(full, "utf8"));
-    } catch (err) {
-      parseErrors.push(`${file} → ist kein gültiges JSON: ${err.message}`);
+/* Prüft die Inhaltsdateien, bevor Eleventy irgendetwas rendert.
+   Ein Fehler bricht den Build ab — siehe lib/data-schema.js.
+
+   Geprüft wird JEDES Sprachpaket gegen dieselbe Feldliste. Damit ist
+   eine unvollständige Übersetzung ein Build-Fehler und keine stille
+   Lücke auf der Seite: fehlt ein Schlüssel in en/, schlägt der Build
+   fehl, statt an dieser Stelle leer zu rendern. */
+function assertDataShape() {
+  const parseErrors = [];
+  const schemaErrors = [];
+
+  for (const lang of LANGS) {
+    const dataByFile = {};
+
+    for (const file of Object.keys(schemas)) {
+      const full = path.join(DATA_DIR, lang, file);
+      try {
+        dataByFile[file] = JSON.parse(fs.readFileSync(full, "utf8"));
+      } catch (err) {
+        parseErrors.push(
+          `${lang}/${file} → ist kein gültiges JSON: ${err.message}`
+        );
+      }
     }
+
+    schemaErrors.push(...validateData(dataByFile, `${lang}/`));
   }
 
-  const errors = [...parseErrors, ...validateData(dataByFile)];
+  const errors = [...parseErrors, ...schemaErrors];
 
   if (errors.length > 0) {
     const lines = errors.map((e) => `  ✗ ${e}`).join("\n");
@@ -59,6 +79,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addGlobalData("hasWordmark", () =>
     fs.existsSync(path.join("src", "assets", "logo.svg"))
   );
+
+  // Vorgabesprache. Alles unter src/en/ überschreibt das auf "en"
+  // (siehe src/en/en.json); welche Inhalte daraus folgen, entscheidet
+  // src/_data/eleventyComputed.js.
+  eleventyConfig.addGlobalData("lang", DEFAULT_LANG);
 
   // ---------------------------------------------------------------
   // VORSCHAU-MODUS — vor dem echten Start wieder entfernen!

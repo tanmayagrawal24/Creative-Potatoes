@@ -633,3 +633,47 @@ a.cp-logo {
   color: var(--cp-ink-muted);
   font-size: var(--cp-step--1);
 }
+
+/* ---------- Sprachumschalter im Kopfbereich ----------
+   Das Markup sitzt in der sig-topbar (hero.njk), die Gestaltung
+   gehört hierher: cp-präfigiert, also diese Seite. .cp-topbar-actions
+   fasst Kontakt-Link und Umschalter zu EINEM Flex-Kind zusammen —
+   .sig-topbar verteilt mit space-between, und mit drei Kindern
+   stünde der Kontakt-Link plötzlich in der Mitte.
+
+   Typografie wie .sig-topbar-link, damit die Leiste ruhig bleibt;
+   nur der Rahmen macht ihn als Schalter kenntlich. */
+
+.cp-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--cp-space-4);
+}
+
+.cp-lang-switch {
+  padding: var(--cp-space-1) var(--cp-space-2);
+  border: 1px solid var(--cp-line);
+  border-radius: var(--cp-radius);
+  color: var(--cp-ink-muted);
+  font-size: var(--cp-step--1);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color var(--cp-dur) var(--cp-ease),
+    border-color var(--cp-dur) var(--cp-ease);
+}
+
+.cp-lang-switch:hover,
+.cp-lang-switch:focus-visible {
+  color: var(--cp-ink);
+  border-color: var(--cp-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cp-lang-switch {
+    transition: none;
+  }
+}

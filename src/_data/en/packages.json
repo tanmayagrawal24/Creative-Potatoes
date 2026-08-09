@@ -1,0 +1,36 @@
+{
+  "note": "Prices on request. Monthly packages can be cancelled month by month.",
+  "items": [
+    {
+      "id": "audit",
+      "title": "Visibility audit",
+      "kind": "One-off project",
+      "contents": "Keyword mapping, technical quick check, competitor gap analysis, AI visibility check, prioritised six-month roadmap",
+      "result": "A clear plan of action",
+      "cta": "Request an audit"
+    },
+    {
+      "id": "wachstum",
+      "title": "Growth",
+      "kind": "Monthly package (approx. 10 hrs)",
+      "contents": "Strategy and coordination (2 hrs), 1–2 SEO articles including implementation, 1 technical measure such as internal linking",
+      "result": "Steady SEO progress",
+      "cta": "Book a first call"
+    },
+    {
+      "id": "komplett",
+      "title": "Complete visibility",
+      "kind": "Monthly package (approx. 20 hrs)",
+      "contents": "Everything in Growth, plus 1 GEO expert article including structured data, 8 social media posts, 1 newsletter",
+      "result": "Full visibility across every channel",
+      "cta": "Book a first call"
+    }
+  ],
+  "addons": [
+    "3D animation and product film",
+    "Additional expert article",
+    "Sector landing page",
+    "Google Business Profile setup",
+    "PAA and topic gap analysis"
+  ]
+}

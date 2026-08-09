@@ -5,8 +5,8 @@
 <section class="cp-section cp-pakete" id="pakete" aria-labelledby="pakete-titel">
   <div class="cp-container">
 
-    <p class="cp-kicker">Pakete</p>
-    <h2 class="cp-h2" id="pakete-titel">Klar geschnürt. Monatlich kündbar.</h2>
+    <p class="cp-kicker">{{ ui.paketeKicker }}</p>
+    <h2 class="cp-h2" id="pakete-titel">{{ ui.paketeHeadline }}</h2>
     <p class="cp-pakete__note">{{ packages.note }}</p>
 
     <div class="cp-pakete__grid">
@@ -16,9 +16,9 @@
         <p class="cp-paket__kind">{{ item.kind }}</p>
 
         <dl class="cp-paket__meta">
-          <dt class="cp-paket__dt">Inhalt</dt>
+          <dt class="cp-paket__dt">{{ ui.paketeContents }}</dt>
           <dd class="cp-paket__dd">{{ item.contents }}</dd>
-          <dt class="cp-paket__dt">Ergebnis</dt>
+          <dt class="cp-paket__dt">{{ ui.paketeResult }}</dt>
           <dd class="cp-paket__dd cp-paket__result">{{ item.result }}</dd>
         </dl>
 
@@ -28,7 +28,7 @@
     </div>
 
     <div class="cp-addons">
-      <h3 class="cp-addons__title">Ergänzend buchbar</h3>
+      <h3 class="cp-addons__title">{{ ui.addonsTitle }}</h3>
       <ul class="cp-addons__list" role="list">
         {%- for addon in packages.addons %}
         <li class="cp-addons__item">{{ addon }}</li>

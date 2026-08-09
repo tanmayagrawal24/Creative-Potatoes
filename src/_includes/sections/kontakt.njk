@@ -16,15 +16,14 @@
 <section class="cp-section cp-kontakt" id="kontakt" aria-labelledby="kontakt-titel">
   <div class="cp-container">
 
-    <p class="cp-kicker">Kontakt</p>
+    <p class="cp-kicker">{{ ui.kontaktKicker }}</p>
     <h2 class="cp-h2" id="kontakt-titel">{{ site.ctaPrimary }}</h2>
 
     <p class="cp-kontakt__text">
-      Schreiben Sie mir kurz, woran Sie arbeiten und wo es hakt. Ich melde
-      mich innerhalb von zwei Werktagen mit einer ersten Einschätzung.
+      {{ ui.kontaktText }}
     </p>
 
-    <a class="cp-kontakt__email" href="mailto:{{ site.email }}?subject=Erstgespr%C3%A4ch">{{ site.email }}</a>
+    <a class="cp-kontakt__email" href="mailto:{{ site.email }}?subject={{ ui.kontaktSubject | urlencode }}">{{ site.email }}</a>
 
   </div>
 </section>

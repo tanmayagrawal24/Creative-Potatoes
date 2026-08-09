@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+permalink: /en/
+title: "Creative Potatoes — Marketing with quiet precision."
+description: "Freelancer for digital visibility: SEO, GEO/AI search, social media, newsletters and product films for SMEs and mid-sized businesses. Transparently planned, accountable month by month."
+home: true
+altDe: "/"
+altEn: "/en/"
+---
+
+{# ---------------------------------------------------------------
+   SEITENAUFBAU — englische Fassung
+
+   Dieselben Abschnitte in derselben Reihenfolge wie src/index.njk.
+   Es gibt bewusst KEINE eigenen englischen Abschnittsdateien: die
+   Vorlagen sind sprachneutral und ziehen ihre Texte aus dem
+   Sprachpaket, das src/en/en.json über "lang": "en" auswählt.
+   Wird hier ein Abschnitt ergänzt, gehört er auch in src/index.njk
+   — und umgekehrt.
+   --------------------------------------------------------------- #}
+
+{% include "sections/hero.njk" %}             {# Kopfbereich — betreut vom Design-Team #}
+
+<main class="cp-main" id="inhalt">
+{% include "sections/leistungen.njk" %}       {# Fünf Leistungssäulen aus en/services.json #}
+{% include "sections/craft.njk" %}            {# Handwerk — betreut vom Design-Team #}
+{% include "sections/pakete.njk" %}           {# Pakete + Add-ons aus en/packages.json #}
+{% include "sections/ablauf.njk" %}           {# Vier Schritte aus en/process.json #}
+{% include "sections/roadmap.njk" %}          {# In Vorbereitung: Ads #}
+{% include "sections/abgrenzung.njk" %}       {# Was ich nicht anbiete #}
+{% include "sections/referenz.njk" %}         {# Anonymisierte Referenz #}
+{% include "sections/faq.njk" %}              {# Akkordeon aus en/faq.json #}
+{% include "sections/kontakt.njk" %}          {# Kontaktaufnahme per E-Mail #}
+</main>
