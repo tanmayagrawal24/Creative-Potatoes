@@ -373,21 +373,87 @@
 
 /* ---------- Referenz (anonymisiert, ein Block) ---------- */
 
-.cp-referenz__body {
-  max-inline-size: 60ch;
-  padding: var(--cp-space-5);
+/* Referenzkarten. Zwei Spalten ab 56em — dieselbe Schwelle wie bei
+   den Leistungen, damit beide Raster auf derselben Breite umbrechen.
+   align-items: start, sonst zieht die längere Karte die kürzere mit. */
+
+.cp-referenzen {
+  display: grid;
+  gap: var(--cp-space-5);
+  align-items: start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 56em) {
+  .cp-referenzen {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--cp-space-6);
+  }
+}
+
+.cp-referenz-card {
+  padding: var(--cp-space-4);
   background: var(--cp-surface);
   border: 1px solid var(--cp-line);
   border-inline-start: 2px solid var(--cp-accent);
   border-radius: var(--cp-radius);
 }
 
-.cp-referenz__body p {
-  margin: 0;
+@media (min-width: 56em) {
+  .cp-referenz-card {
+    padding: var(--cp-space-5);
+  }
+}
+
+.cp-referenz-card__sector {
+  margin: 0 0 var(--cp-space-1);
+  color: var(--cp-ink-muted);
+  font-size: var(--cp-step--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cp-referenz-card__client {
+  margin: 0 0 var(--cp-space-3);
+  font-family: var(--cp-font-display);
+  font-size: var(--cp-step-2);
+  font-weight: 420;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.cp-referenz-card__scope,
+.cp-referenz-card__summary,
+.cp-referenz-card__result {
+  margin: 0 0 var(--cp-space-3);
+  max-inline-size: 52ch;
   color: var(--cp-ink-muted);
   font-size: var(--cp-step-0);
   line-height: 1.65;
   text-wrap: pretty;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.cp-referenz-card__result {
+  color: var(--cp-ink);
+}
+
+/* Der Link liegt am Fuss der Karte und trägt dieselbe aufziehende
+   Unterstreichung wie die Kontaktadresse (siehe motion.css). */
+.cp-referenz-card__link {
+  display: inline-block;
+  margin-block-start: var(--cp-space-2);
+  color: var(--cp-ink);
+  font-size: var(--cp-step--1);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-block-end: 1px solid var(--cp-accent);
+  padding-block-end: 2px;
 }
 
 /* ---------- FAQ (natives <details>-Akkordeon) ---------- */

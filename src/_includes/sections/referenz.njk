@@ -1,7 +1,17 @@
-{# Referenz — anonymisiert, ohne Kundenname.
-   Der Fließtext ist bewusst ein Platzhalter: Referenzaussagen und
-   Kennzahlen trägt der Inhaber selbst ein. Hier werden keine Zahlen
-   erfunden. #}
+{# Referenzen — Inhalte: src/_data/<sprache>/references.json.
+
+   Was hier stehen darf und was nicht:
+
+   Der Name, die Branche und der Link sind Angaben über das Kunden-
+   unternehmen — sie stammen vom Inhaber, nicht von der Kundenwebsite.
+   Es wird KEIN Text, kein Bild und kein Claim von dort übernommen.
+
+   scope, summary und result beschreiben die eigene Arbeit. Sie kann
+   nur der Inhaber wahrheitsgemäß ausfüllen und stehen bis dahin als
+   [[Platzhalter]] hier. Es werden keine Kennzahlen erfunden.
+
+   result ist optional: bei laufenden Projekten gibt es noch kein
+   Ergebnis, und dann fehlt der Absatz ganz — statt leer zu stehen. #}
 
 <section class="cp-section cp-referenz" id="referenz" aria-labelledby="referenz-titel">
   <div class="cp-container">
@@ -9,9 +19,31 @@
     <p class="cp-kicker">{{ ui.referenzKicker }}</p>
     <h2 class="cp-h2" id="referenz-titel">{{ ui.referenzHeadline }}</h2>
 
-    <div class="cp-referenz__body">
-      <p>{{ ui.referenzBody }}</p>
-    </div>
+    <ul class="cp-referenzen" role="list">
+      {%- for ref in references %}
+      <li class="cp-referenz-card">
+        <p class="cp-referenz-card__sector">{{ ref.sector }}</p>
+        <h3 class="cp-referenz-card__client">{{ ref.client }}</h3>
+
+        <p class="cp-referenz-card__scope">{{ ref.scope }}</p>
+        <p class="cp-referenz-card__summary">{{ ref.summary }}</p>
+
+        {%- if ref.result %}
+        <p class="cp-referenz-card__result">{{ ref.result }}</p>
+        {%- endif %}
+
+        {%- if ref.url %}
+        {#- Fremde Adresse: rel="noopener noreferrer" trennt die neue
+            Seite vom eigenen Fenster und schickt keinen Referrer mit.
+            Das aria-label nennt den Kunden, damit im Screenreader nicht
+            mehrere gleichlautende „Website ansehen" nebeneinander stehen. #}
+        <a class="cp-referenz-card__link" href="{{ ref.url }}"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="{{ ui.referenzVisit }}: {{ ref.client }}">{{ ui.referenzVisit }}</a>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
 
   </div>
 </section>

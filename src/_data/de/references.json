@@ -1,23 +1,16 @@
 [
   {
-    "client": "Platzhalter Kunde A",
-    "sector": "E-Commerce, DE",
-    "summary": "Kurzbeschreibung des Projekts in ein bis zwei Sätzen. Was war die Ausgangslage, was wurde umgesetzt.",
-    "result": "Platzhalter-Ergebnis, z. B. +120 % Umsatz über Paid Social in neun Monaten.",
-    "url": ""
+    "client": "MEGASONEX",
+    "sector": "Ultraschall-Zahnbürsten · D2C · DACH",
+    "scope": "[[Welche Leistungen laufen — vom Inhaber auszufüllen, z. B. SEO, GEO, Newsletter]]",
+    "summary": "[[Ausgangslage und Vorgehen in ein bis zwei Sätzen — vom Inhaber auszufüllen. Keine erfundenen Kennzahlen.]]",
+    "url": "https://www.megasonex-m8.de"
   },
   {
-    "client": "Platzhalter Kunde B",
-    "sector": "B2B Dienstleistung, AT",
-    "summary": "Kurzbeschreibung des Projekts in ein bis zwei Sätzen. Was war die Ausgangslage, was wurde umgesetzt.",
-    "result": "Platzhalter-Ergebnis, z. B. Kosten pro Lead um 40 % gesenkt.",
-    "url": ""
-  },
-  {
-    "client": "Platzhalter Kunde C",
-    "sector": "Retail, CH",
-    "summary": "Kurzbeschreibung des Projekts in ein bis zwei Sätzen. Was war die Ausgangslage, was wurde umgesetzt.",
-    "result": "Platzhalter-Ergebnis, z. B. Wiederkaufrate von 18 % auf 31 % erhöht.",
-    "url": ""
+    "client": "Quiet Please",
+    "sector": "Akustikpaneele aus PET-Vlies · B2B und B2C · Deutschland",
+    "scope": "[[Welche Leistungen laufen — vom Inhaber auszufüllen, z. B. SEO, GEO, Newsletter]]",
+    "summary": "[[Ausgangslage und Vorgehen in ein bis zwei Sätzen — vom Inhaber auszufüllen. Keine erfundenen Kennzahlen.]]",
+    "url": "https://www.quietplease.design"
   }
 ]

@@ -1,23 +1,16 @@
 [
   {
-    "client": "Placeholder client A",
-    "sector": "E-commerce, DE",
-    "summary": "Short description of the project in one or two sentences. What the starting position was, and what was delivered.",
-    "result": "Placeholder result, e.g. +120% revenue via paid social in nine months.",
-    "url": ""
+    "client": "MEGASONEX",
+    "sector": "Ultrasonic toothbrushes · D2C · DACH",
+    "scope": "[[Which services are running — to be completed by the owner, e.g. SEO, GEO, newsletter]]",
+    "summary": "[[Starting position and approach in one or two sentences — to be completed by the owner. No invented figures.]]",
+    "url": "https://www.megasonex-m8.de"
   },
   {
-    "client": "Placeholder client B",
-    "sector": "B2B services, AT",
-    "summary": "Short description of the project in one or two sentences. What the starting position was, and what was delivered.",
-    "result": "Placeholder result, e.g. cost per lead reduced by 40%.",
-    "url": ""
-  },
-  {
-    "client": "Placeholder client C",
-    "sector": "Retail, CH",
-    "summary": "Short description of the project in one or two sentences. What the starting position was, and what was delivered.",
-    "result": "Placeholder result, e.g. repeat purchase rate increased from 18% to 31%.",
-    "url": ""
+    "client": "Quiet Please",
+    "sector": "Acoustic panels made from PET felt · B2B and B2C · Germany",
+    "scope": "[[Which services are running — to be completed by the owner, e.g. SEO, GEO, newsletter]]",
+    "summary": "[[Starting position and approach in one or two sentences — to be completed by the owner. No invented figures.]]",
+    "url": "https://www.quietplease.design"
   }
 ]

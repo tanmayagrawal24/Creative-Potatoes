@@ -37,7 +37,7 @@
     ".cp-ablauf__note",
     ".cp-ablauf__step",
     ".cp-statement__text",
-    ".cp-referenz__body",
+    ".cp-referenz-card",
     ".cp-faq__item",
     ".cp-kontakt__text",
     ".cp-kontakt__email"

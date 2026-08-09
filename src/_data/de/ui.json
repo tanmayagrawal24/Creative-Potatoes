@@ -1,50 +1,38 @@
 {
   "skipLink": "Zum Inhalt springen",
-
   "navLabel": "Hauptnavigation",
   "navContact": "Kontakt",
   "logoHome": "Startseite",
   "homeHref": "/",
-
   "langSwitchHref": "/en/",
   "langSwitchLabel": "EN",
   "langSwitchTitle": "Switch to English",
   "langSwitchHreflang": "en",
-
   "leistungenKicker": "Leistungen",
   "leistungenHeadline": "Fünf Hebel für digitale Sichtbarkeit.",
-
   "paketeKicker": "Pakete",
   "paketeHeadline": "Klar geschnürt. Monatlich kündbar.",
   "paketeContents": "Inhalt",
   "paketeResult": "Ergebnis",
   "addonsTitle": "Ergänzend buchbar",
-
   "ablaufKicker": "Ablauf",
-
   "roadmapKicker": "Roadmap",
   "roadmapLead": "In Vorbereitung: Google Ads & Meta Ads.",
   "roadmapBody": "Ich nehme Performance-Marketing erst ins Programm, wenn ich es in gewohnter Qualität liefern kann.",
-
   "abgrenzungKicker": "Abgrenzung",
   "abgrenzungLead": "Was ich nicht anbiete:",
   "abgrenzungBody": "gekaufte Backlink-Pakete und Shop-Programmierung. Für technische Umsetzungen arbeite ich eng mit Ihrer Agentur oder IT zusammen (Schnittstellenmanagement).",
-
   "referenzKicker": "Referenz",
-  "referenzHeadline": "Aktuelles Projekt: Mittelständischer Onlineshop (DACH)",
-  "referenzBody": "[[Referenztext — vom Inhaber auszufüllen. Ausgangslage, Vorgehen und Ergebnis in zwei bis vier Sätzen. Keine erfundenen Kennzahlen; nur Zahlen eintragen, die belegbar sind.]]",
-
+  "referenzHeadline": "Ausgewählte Projekte.",
+  "referenzVisit": "Website ansehen",
   "faqKicker": "FAQ",
   "faqHeadline": "Häufige Fragen.",
-
   "kontaktKicker": "Kontakt",
   "kontaktText": "Schreiben Sie mir kurz, woran Sie arbeiten und wo es hakt. Ich melde mich innerhalb von zwei Werktagen mit einer ersten Einschätzung.",
   "kontaktSubject": "Erstgespräch",
-
   "footerNavLabel": "Rechtliches und Über uns",
   "footerUeber": "Über",
   "footerDatenschutz": "Datenschutz",
-
   "craftKicker": "Handwerk",
   "craftHeadline": "Vom Storyboard zum Screen",
   "craftStand": "Kreation ist bei mir kein Zufall, sondern Handwerk — geschult am Bild, gedacht in Bewegung.",
