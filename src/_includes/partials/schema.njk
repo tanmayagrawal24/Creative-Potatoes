@@ -1,0 +1,214 @@
+{# ---------------------------------------------------------------
+   Schema.org Structured Data for SEO/GEO Visibility
+   
+   Includes:
+   - LocalBusiness (DACH presence + contact info)
+   - Service schemas (5 core service pillars)
+   - BreadcrumbList (navigation hierarchy)
+   
+   Rendered in <head> as application/ld+json scripts.
+   --------------------------------------------------------------- #}
+
+{# LocalBusiness Schema #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "{{ site.url }}/#localbusiness",
+  "name": "{{ site.name }}",
+  "description": "{{ site.description }}",
+  "url": "{{ site.url }}",
+  "email": "{{ site.email }}",
+  "image": "{{ '/assets/logo.svg' | absoluteUrl(site.url) }}",
+  "priceRange": "$$",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Deutschland",
+      "identifier": "DE"
+    },
+    {
+      "@type": "Country",
+      "name": "Österreich",
+      "identifier": "AT"
+    },
+    {
+      "@type": "Country",
+      "name": "Schweiz",
+      "identifier": "CH"
+    }
+  ],
+  "availableLanguage": ["de", "en"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "email": "{{ site.email }}",
+    "availableLanguage": ["de", "en"],
+    "areaServed": ["DE", "AT", "CH"]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/tanmay-agrawal",
+    "https://github.com/tanmayagrawal24"
+  ]
+}
+</script>
+
+{# BreadcrumbList Schema #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "{{ site.url }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Leistungen",
+      "item": "{{ site.url }}#leistungen"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "FAQ",
+      "item": "{{ site.url }}#faq"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Kontakt",
+      "item": "{{ site.url }}#kontakt"
+    }
+  ]
+}
+</script>
+
+{# Individual Service Schemas (for each of the 5 pillars) #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "{{ site.url }}/#service-seo",
+      "name": "SEO für Onlineshops & Unternehmensseiten",
+      "description": "Bessere Google-Rankings durch Inhalte, die verkaufen — und Technik, die trägt.",
+      "url": "{{ site.url }}#seo",
+      "provider": {
+        "@id": "{{ site.url }}/#organization"
+      },
+      "areaServed": [
+        { "@type": "Country", "identifier": "DE" },
+        { "@type": "Country", "identifier": "AT" },
+        { "@type": "Country", "identifier": "CH" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "SEO Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Keyword-Mapping und Priorisierung",
+            "description": "Welche Begriffe sich wirklich für Ihr Geschäft lohnen"
+          },
+          {
+            "@type": "Offer",
+            "name": "SEO-Texte für Kategorie-, Produkt- und Landingpages",
+            "description": "600–1.000 Wörter, suchintentionsgerecht"
+          },
+          {
+            "@type": "Offer",
+            "name": "Indexmanagement",
+            "description": "Behebung von Keyword-Kannibalisierung und Optimierungen"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "{{ site.url }}/#service-geo",
+      "name": "GEO — Sichtbarkeit in KI-Suchen",
+      "description": "Wenn Kunden die KI fragen, soll die Antwort aus Ihren Inhalten kommen.",
+      "url": "{{ site.url }}#geo",
+      "provider": {
+        "@id": "{{ site.url }}/#organization"
+      },
+      "areaServed": [
+        { "@type": "Country", "identifier": "DE" },
+        { "@type": "Country", "identifier": "AT" },
+        { "@type": "Country", "identifier": "CH" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "GEO Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "KI-Sichtbarkeits-Check",
+            "description": "Wird Ihr Unternehmen von KI-Systemen zitiert?"
+          },
+          {
+            "@type": "Offer",
+            "name": "SEO-/GEO-Fachbeiträge",
+            "description": "Strukturiert für Google-Rankings und KI-Zitierbarkeit"
+          },
+          {
+            "@type": "Offer",
+            "name": "Autorenprofil und E-E-A-T",
+            "description": "Glaubwürdige Autorenseiten für KI-Quellenkredibilität"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "{{ site.url }}/#service-social",
+      "name": "Social Media & Google Business",
+      "description": "Ihre Produkte dort sichtbar, wo Ihre Kunden täglich sind.",
+      "url": "{{ site.url }}#social",
+      "provider": {
+        "@id": "{{ site.url }}/#organization"
+      },
+      "areaServed": [
+        { "@type": "Country", "identifier": "DE" },
+        { "@type": "Country", "identifier": "AT" },
+        { "@type": "Country", "identifier": "CH" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "{{ site.url }}/#service-newsletter",
+      "name": "Newsletter-Marketing (Brevo)",
+      "description": "Direkter Draht zu Ihrer Zielgruppe — DSGVO-konform über Brevo.",
+      "url": "{{ site.url }}#newsletter",
+      "provider": {
+        "@id": "{{ site.url }}/#organization"
+      },
+      "areaServed": [
+        { "@type": "Country", "identifier": "DE" },
+        { "@type": "Country", "identifier": "AT" },
+        { "@type": "Country", "identifier": "CH" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "{{ site.url }}/#service-3d",
+      "name": "3D-Animation & Produktfilm",
+      "description": "Als 3D-Animator und Filmemacher zeige ich Ihre Produkte, wie Fotos es nicht können.",
+      "url": "{{ site.url }}#3d",
+      "provider": {
+        "@id": "{{ site.url }}/#organization"
+      },
+      "areaServed": [
+        { "@type": "Country", "identifier": "DE" },
+        { "@type": "Country", "identifier": "AT" },
+        { "@type": "Country", "identifier": "CH" }
+      ]
+    }
+  ]
+}
+</script>
